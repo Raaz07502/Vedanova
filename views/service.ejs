@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AnyTechPros - Our Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        /* ============================================================
+           SERVICES PAGE - COMPLETE
+           ============================================================ */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1A2C3E;
+            scroll-behavior: smooth;
+        }
+
+        /* ============================================================
+           SERVICES HERO / BANNER SECTION
+           ============================================================ */
+
+        .services-hero {
+            background: linear-gradient(135deg, #0B2B42 0%, #1A4A6E 100%);
+            padding: 3rem 2rem 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .services-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 217, 102, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .services-hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .services-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+            padding: 0.5rem 1.5rem;
+            border-radius: 100px;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .services-hero-badge i {
+            color: #FFD966;
+            font-size: 1rem;
+        }
+
+        .services-hero-badge span {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .services-hero-title {
+            font-family: 'Zodiak', 'Times New Roman', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .services-hero-title span {
+            background: linear-gradient(135deg, #FFD966 0%, #FFB347 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .services-hero-description {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        /* ============================================================
+           SERVICES GRID SECTION
+           ============================================================ */
+
+        .services-main {
+            padding: 4rem 2rem 5rem 2rem;
+            background: linear-gradient(135deg, #F8FAFE 0%, #FFFFFF 100%);
+        }
+
+        .services-main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Section Header */
+        .services-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .services-header-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(37, 99, 235, 0.08);
+            padding: 0.4rem 1.2rem;
+            border-radius: 100px;
+            margin-bottom: 1rem;
+        }
+
+        .services-header-tag i {
+            color: #2563EB;
+            font-size: 0.8rem;
+        }
+
+        .services-header-tag span {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #2563EB;
+        }
+
+        .services-header h2 {
+            font-family: 'Zodiak', 'Times New Roman', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #0B2B42;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+        }
+
+        .services-header p {
+            font-size: 1.1rem;
+            color: #4A627A;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        /* Service Card */
+        .service-card {
+            background: #FFFFFF;
+            border-radius: 1.5rem;
+            padding: 2rem 1.75rem;
+            box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(37, 99, 235, 0.06);
+            transition: all 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2563EB, #3B82F6, #60A5FA);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.12);
+            border-color: rgba(37, 99, 235, 0.15);
+        }
+
+        /* Service Icon */
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #EFF4FC 0%, #DBEAFE 100%);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-icon i {
+            font-size: 1.8rem;
+            color: #2563EB;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+        }
+
+        .service-card:hover .service-icon i {
+            color: #FFFFFF;
+        }
+
+        /* Service Content */
+        .service-name {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #0B2B42;
+            margin: 0 0 0.5rem 0;
+            line-height: 1.3;
+        }
+
+        .service-description {
+            font-size: 0.92rem;
+            color: #5B6E8C;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* ============================================================
+           CTA SECTION
+           ============================================================ */
+
+        .services-cta {
+            background: linear-gradient(135deg, #0B2B42 0%, #1A4A6E 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .services-cta-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-cta h3 {
+            font-family: 'Zodiak', 'Times New Roman', serif;
+            font-size: 2.2rem;
+            color: #FFFFFF;
+            margin-bottom: 0.75rem;
+        }
+
+        .services-cta p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #FFD966 0%, #FFB347 100%);
+            color: #0B2B42;
+            padding: 0.9rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px -8px rgba(255, 217, 102, 0.3);
+            font-size: 1rem;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px -10px rgba(255, 217, 102, 0.4);
+            color: #0B2B42;
+        }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+
+        @media (max-width: 992px) {
+            .services-hero-title {
+                font-size: 2.8rem;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .services-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .services-hero {
+                padding: 5rem 1.5rem 3rem 1.5rem;
+            }
+
+            .services-main {
+                padding: 3rem 1.5rem 4rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-hero-title {
+                font-size: 2.2rem;
+            }
+
+            .services-hero-description {
+                font-size: 1rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+
+            .services-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .services-header p {
+                font-size: 1rem;
+            }
+
+            .service-card {
+                padding: 1.5rem 1.25rem;
+            }
+
+            .service-name {
+                font-size: 1rem;
+            }
+
+            .service-description {
+                font-size: 0.85rem;
+            }
+
+            .service-icon {
+                width: 50px;
+                height: 50px;
+            }
+
+            .service-icon i {
+                font-size: 1.5rem;
+            }
+
+            .services-cta h3 {
+                font-size: 1.8rem;
+            }
+
+            .services-main {
+                padding: 2.5rem 1.25rem 3rem 1.25rem;
+            }
+
+            .services-cta {
+                padding: 3rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .services-hero-title {
+                font-size: 1.8rem;
+            }
+
+            .services-hero-badge span {
+                font-size: 0.7rem;
+            }
+
+            .services-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .services-header p {
+                font-size: 0.9rem;
+            }
+
+            .service-card {
+                padding: 1.25rem 1rem;
+            }
+
+            .service-icon {
+                width: 46px;
+                height: 46px;
+                border-radius: 12px;
+            }
+
+            .service-icon i {
+                font-size: 1.3rem;
+            }
+
+            .service-name {
+                font-size: 0.95rem;
+            }
+
+            .service-description {
+                font-size: 0.82rem;
+            }
+
+            .services-cta h3 {
+                font-size: 1.5rem;
+            }
+
+            .btn-cta {
+                padding: 0.75rem 2rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============================================================
+    SERVICES HERO / BANNER
+    ============================================================ -->
+    <section class="services-hero">
+        <div class="services-hero-container">
+            <div class="services-hero-badge">
+                <i class="fas fa-star"></i>
+                <span>What We Offer</span>
+            </div>
+            <h1 class="services-hero-title">
+                Our <span>Services</span>
+            </h1>
+            <p class="services-hero-description">
+                A comprehensive portfolio spanning government advisory, technology, and business consulting — designed to help you navigate complex challenges and achieve sustainable growth.
+            </p>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    SERVICES GRID
+    ============================================================ -->
+    <section class="services-main">
+        <div class="services-main-container">
+            <!-- Section Header -->
+            <div class="services-header">
+                <div class="services-header-tag">
+                    <i class="fas fa-bolt"></i>
+                    <span>Expertise Across Domains</span>
+                </div>
+                <h2>What We Do</h2>
+                <p>End-to-end solutions for government, enterprises, and public sector organizations.</p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="services-grid">
+                <!-- Service 1 - Government Advisory -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3 class="service-name">Government Advisory & Project Management</h3>
+                    <p class="service-description">Policy advisory, DPR drafting, procurement strategy, and PMU support for government programs across India.</p>
+                </div>
+
+                <!-- Service 2 - Contract Drafting -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-signature"></i>
+                    </div>
+                    <h3 class="service-name">Contract Drafting & Management</h3>
+                    <p class="service-description">End-to-end RFP development, contract structuring, SLA governance, and compliance oversight for public sector.</p>
+                </div>
+
+                <!-- Service 3 - Cyber Security -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="service-name">Cyber Security Consulting</h3>
+                    <p class="service-description">Risk assessment, security frameworks, and audit readiness for government IT infrastructure and enterprise systems.</p>
+                </div>
+
+                <!-- Service 4 - HR Consulting -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3 class="service-name">HR Consulting & Workforce Solutions</h3>
+                    <p class="service-description">Recruitment, talent acquisition, and workforce management for IT, government, and business sectors.</p>
+                </div>
+
+                <!-- Service 5 - Digital Transformation -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-digital-tiling"></i>
+                    </div>
+                    <h3 class="service-name">Digital Transformation & IT Modernization</h3>
+                    <p class="service-description">Legacy system modernization, cloud adoption, and enterprise IT transformation for government and enterprises.</p>
+                </div>
+
+                <!-- Service 6 - ERP Implementation -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cubes"></i>
+                    </div>
+                    <h3 class="service-name">ERP & Software Implementation</h3>
+                    <p class="service-description">End-to-end ERP deployment, e-governance platforms, and custom software solutions for public sector organizations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    CTA SECTION
+    ============================================================ -->
+    <section class="services-cta">
+        <div class="services-cta-container">
+            <h3>Ready to Transform Your Organization?</h3>
+            <p>Let's work together to build solutions that drive impact, efficiency, and growth for your organization.</p>
+            <a href="#" class="btn-cta">
+                Get in Touch
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,340 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  background: #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ========== FOOTER DESIGN - COMPACT & RESPONSIVE ========== */
+
+.mainFooterBigWrapper {
+  background: #0a2b3e;
+  color: #ffffff;
+  width: 100%;
+  padding: 2rem 1.5rem 1.2rem 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footerBigInnerContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem 2rem;
+}
+
+/* BRAND AREA */
+
+.brandAreaBigBlock {
+  flex: 1.2;
+  min-width: 210px;
+}
+
+.brandSingleLineTextBig {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+  line-height: 1.3;
+  margin-bottom: 0.2rem;
+  background: linear-gradient(135deg, #ffffff, #d9efff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.brandDescriptionCompactTextBig {
+  font-size: 0.8rem;
+  color: #b9d0e6;
+  margin-top: 0.3rem;
+  opacity: 0.85;
+}
+
+/* SERVICES */
+
+.servicesSectionBigContainer {
+  flex: 1.6;
+  min-width: 240px;
+}
+
+.globalSectionTitleBig {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  color: #ffd966;
+}
+
+.servicesGridBigContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem 1rem;
+}
+
+.serviceLinkBigItem {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #e2e8f0;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.serviceLinkBigItem:hover {
+  color: #ffd966;
+  transform: translateX(2px);
+}
+
+.serviceLinkBigItem::before {
+  content: "▹";
+  color: #ffd966;
+  font-size: 0.65rem;
+}
+
+/* RIGHT GROUP */
+
+.rightGroupBigWrapper {
+  flex: 1.2;
+  min-width: 260px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+  justify-content: space-between;
+}
+
+.companySectionBigContainer {
+  flex: 1;
+  min-width: 120px;
+}
+
+.contactSectionBigContainer {
+  flex: 1;
+  min-width: 160px;
+}
+
+/* COMPANY LINKS */
+
+.companyLinksBigList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.companyLinkBigItem {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.companyLinkBigItem:hover {
+  color: #ffd966;
+  padding-left: 3px;
+}
+
+.companyLinkBigItem::before {
+  content: "◆";
+  font-size: 0.55rem;
+  color: #ffd966;
+  opacity: 0.8;
+}
+
+/* CONTACT DETAILS */
+
+.contactDetailsBigWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.contactItemBigBlock {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.87rem;
+  color: #e2e8f0;
+  flex-wrap: wrap;
+}
+
+.contactIconBigStyle {
+  min-width: 26px;
+  font-size: 1rem;
+}
+
+.contactTextBigContent a {
+  color: #ffd966;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contactTextBigContent a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.phoneNumbersBigGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.locationTextBigContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* FOOTER BOTTOM BAR */
+
+.footerBottomBigBar {
+  max-width: 1280px;
+  margin: 1.5rem auto 0 auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.75rem;
+  color: #9bb5d0;
+}
+
+.footerLegalBigLinks {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.footerLegalBigLinks a {
+  color: #9bb5d0;
+  text-decoration: none;
+}
+
+.footerLegalBigLinks a:hover {
+  color: #ffd966;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 880px) {
+
+  .footerBigInnerContainer {
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+
+  .rightGroupBigWrapper {
+    width: 100%;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+}
+
+@media screen and (max-width: 580px) {
+
+  .mainFooterBigWrapper {
+    padding: 1.8rem 1.2rem 1rem;
+  }
+
+  .servicesGridBigContainer {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .rightGroupBigWrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: nowrap;
+  }
+
+  .companySectionBigContainer,
+  .contactSectionBigContainer {
+    flex: 1;
+    min-width: auto;
+  }
+
+  .globalSectionTitleBig {
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .companyLinksBigList {
+    gap: 0.5rem;
+  }
+
+  .companyLinkBigItem {
+    font-size: 0.82rem;
+  }
+
+  .contactItemBigBlock {
+    font-size: 0.8rem;
+    gap: 6px;
+  }
+
+  .contactIconBigStyle {
+    min-width: 22px;
+    font-size: 0.9rem;
+  }
+
+  .brandSingleLineTextBig {
+    font-size: 1.2rem;
+  }
+
+  .footerBottomBigBar {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 1.2rem;
+  }
+
+  .footerLegalBigLinks {
+    justify-content: center;
+  }
+
+}
+
+@media screen and (max-width: 450px) {
+
+  .rightGroupBigWrapper {
+    flex-wrap: wrap;
+    gap: 1.2rem;
+  }
+
+  .companySectionBigContainer,
+  .contactSectionBigContainer {
+    flex: 1 1 45%;
+  }
+
+}
+
+/* compact spacing */
+
+.serviceLinkBigItem,
+.companyLinkBigItem,
+.contactItemBigBlock {
+  line-height: 1.4;
+}
+
+.brandSingleLineTextBig {
+  font-weight: 800;
+  background: linear-gradient(135deg, #FFFFFF, #FFE6B0);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}

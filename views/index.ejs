@@ -1,0 +1,1887 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AnyTechPros</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/common/header.css">
+    <link rel="stylesheet" href="/css/common/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+      /* ============================================================
+   CLEAN CSS - Only styles being used on the page
+   ============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #1A2C3E;
+    scroll-behavior: smooth;
+}
+
+/* ===== CAROUSEL ===== */
+.carousel-inner,
+.carousel-item {
+    height: 64vh;
+}
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* ===== HERO TITLE SECTION (old - might not be used now) ===== */
+.hero-title-section {
+    text-align: center;
+    padding: 3rem 1.5rem 1.5rem 1.5rem;
+    background: linear-gradient(135deg, #F8FAFE 0%, #F1F5F9 100%);
+}
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, #7597b9 0%, #6d94ad 100%);
+    padding: 0.6rem 1.5rem;
+    border-radius: 80px;
+    margin-bottom: 0.5rem;
+}
+.hero-badge i {
+    font-size: 2rem;
+    color: #FFD966;
+}
+.hero-badge span {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: white;
+    text-transform: uppercase;
+}
+.hero-subtitle {
+    font-size: 1rem;
+    color: #4A627A;
+    margin-top: 0.75rem;
+    font-weight: 500;
+}
+
+/* ===== CAPABILITY SECTION (Cards) ===== */
+.capability-section {
+    padding: 0rem 1.5rem 5rem 1.5rem;
+    background: linear-gradient(135deg, #F8FAFE 0%, #F1F5F9 100%);
+}
+.showcase-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.8rem;
+    align-items: stretch;
+}
+.challenges,
+.capability-depth {
+    background: #ffffff;
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+    padding: 2rem 2rem;
+    transition: all 0.35s ease;
+    border: 1px solid rgba(44, 123, 229, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+.challenges::before,
+.capability-depth::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #2563EB, #3B82F6, #60A5FA);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+.challenges:hover::before,
+.capability-depth:hover::before {
+    transform: scaleX(1);
+}
+.challenges:hover,
+.capability-depth:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 28px 45px -18px rgba(0, 0, 0, 0.2);
+    border-color: rgba(44, 123, 229, 0.3);
+}
+.section-label {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #2563EB;
+    background: #EFF4FC;
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    border-radius: 30px;
+    margin-bottom: 1rem;
+}
+.section-title {
+    font-size: 1.9rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+    color: #0B2B42;
+    letter-spacing: -0.02em;
+}
+.section-sub {
+    font-size: 0.95rem;
+    color: #5B6E8C;
+    border-left: 3px solid #2563EB;
+    padding-left: 1rem;
+    margin-bottom: 1.8rem;
+    font-weight: 500;
+}
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    transition: all 0.2s;
+}
+.feature-icon {
+    font-size: 1.4rem;
+    font-weight: 800;
+    min-width: 48px;
+    background: #F0F6FF;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    color: #2563EB;
+    transition: 0.25s;
+}
+.feature-item:hover .feature-icon {
+    background: #2563EB;
+    color: white;
+    transform: scale(1.02);
+}
+.feature-text h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+    color: #0F2C44;
+}
+.feature-text p {
+    font-size: 0.88rem;
+    color: #5B6E8C;
+    line-height: 1.45;
+    margin: 0;
+}
+.skill-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 0.8rem;
+}
+.skill-item {
+    width: 100%;
+}
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+.skill-name {
+    color: #1F3B4C;
+    font-weight: 600;
+}
+.skill-percent {
+    color: #2563EB;
+    font-weight: 800;
+    background: #EFF4FC;
+    padding: 0.2rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+}
+.progress-bar-bg {
+    background-color: #E8EDF5;
+    border-radius: 12px;
+    height: 8px;
+    overflow: hidden;
+}
+.progress-fill {
+    background: linear-gradient(90deg, #2563EB, #3B82F6);
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    transition: width 1s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+/* ===== STATS SECTION ===== */
+.stats-section {
+    background: linear-gradient(135deg, #0B2B42 0%, #1A4A6E 100%);
+    padding: 1.5rem 1.5rem;
+    position: relative;
+}
+.stats-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0rem;
+}
+.stat-card {
+    text-align: center;
+    flex: 1;
+    min-width: 180px;
+    padding: 1rem 1.5rem;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+.stat-card:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 50px;
+    background: linear-gradient(180deg, transparent, #FFD966, #FFD966, transparent);
+}
+.stat-card:hover {
+    transform: translateY(-8px);
+}
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #FFD966 0%, #FFB347 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.stat-number span {
+    background: linear-gradient(135deg, #FFD966 0%, #FFB347 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.stat-label {
+    font-size: 0.8rem;
+    letter-spacing: 2.5px;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    opacity: 0.85;
+}
+
+/* ===== NEW HOME HERO SECTION ===== */
+.home-hero-section {
+    position: relative;
+    background: linear-gradient(135deg, #F8FAFE 0%, #FFFFFF 100%);
+    overflow: hidden;
+    padding: 3rem 2rem 1.5rem 2rem;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+.hero-background-shape {
+    position: absolute;
+    top: -30%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, rgba(37, 99, 235, 0) 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+.hero-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+.hero-content {
+    max-width: 600px;
+}
+.hero-badge-new {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(37, 99, 235, 0.1);
+    backdrop-filter: blur(4px);
+    padding: 0.5rem 1.2rem;
+    border-radius: 100px;
+    margin-bottom: 1.8rem;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+}
+.badge-pulse {
+    width: 10px;
+    height: 10px;
+    background: #2563EB;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.5);
+    animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.5); }
+    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(37, 99, 235, 0); }
+    100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+}
+.badge-text {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #1E40AF;
+    letter-spacing: 0.5px;
+}
+
+/* ★ MAIN TITLE COLOR - YAHAN SE CHANGE HOGA ★ */
+.hero-main-title {
+    font-family: 'Zodiak', 'Times New Roman', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+    background: linear-gradient(110deg, #0F2C44 0%, #2563EB 70%); 
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #4A627A;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+.hero-buttons {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 2.5rem;
+}
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+    color: white;
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px -8px rgba(37, 99, 235, 0.4);
+}
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px -10px rgba(37, 99, 235, 0.5);
+    background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+    color: white;
+}
+.trust-indicators {
+    display: flex;
+    gap: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+.trust-item {
+    text-align: left;
+}
+.trust-number {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #2563EB;
+    line-height: 1.2;
+}
+.trust-label {
+    font-size: 0.75rem;
+    color: #6B7280;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+/* ===== RIGHT VISUAL CARD ===== */
+.hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-visual-card {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(2px);
+    border-radius: 2rem;
+    padding: 1.4rem 1.8rem;
+    box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    width: 100%;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+.hero-visual-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 45px -12px rgba(37, 99, 235, 0.25);
+    border-color: #2563EB40;
+}
+.map-illustration i {
+    font-size: 3.8rem;
+    color: #2563EB;
+    background: linear-gradient(145deg, #EFF4FF, #FFFFFF);
+    padding: 0.8rem;
+    border-radius: 80px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    margin-bottom: 0.75rem;
+}
+.map-illustration div:first-of-type {
+    font-weight: 800;
+    font-size: 1.15rem;
+    margin: 0.5rem 0 0.25rem;
+    color: #0B2B42;
+}
+.state-list {
+    font-size: 0.78rem;
+    color: #2c6280;
+    line-height: 1.4;
+    font-weight: 500;
+    background: #F8F9FF;
+    padding: 0.4rem 0.6rem;
+    border-radius: 40px;
+    display: inline-block;
+    margin: 0.5rem auto;
+}
+.capability-pills {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+.pill {
+    background: #EFF4FC;
+    padding: 0.3rem 0.9rem;
+    border-radius: 40px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #1A4A6E;
+    letter-spacing: 0.3px;
+    transition: 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+.pill i {
+    font-size: 0.7rem;
+    color: #2563EB;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+}
+.pill:hover {
+    background: #2563EB;
+    color: white;
+    transform: scale(1.02);
+}
+.pill:hover i {
+    color: white;
+}
+.hero-visual-card hr {
+    margin: 1rem 0 0.8rem;
+    opacity: 0.3;
+}
+
+/* ============================================================
+   RESPONSIVE BREAKPOINTS
+   ============================================================ */
+
+@media (max-width: 992px) {
+    .showcase-grid {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+    }
+    .capability-section {
+        padding: 0rem 1.25rem 3.5rem 1.25rem;
+    }
+    .section-title {
+        font-size: 1.7rem;
+    }
+    .hero-badge span {
+        font-size: 1.3rem;
+    }
+    .hero-badge i {
+        font-size: 1.5rem;
+    }
+    .hero-badge {
+        padding: 0.6rem 1.8rem;
+    }
+    /* Hero container */
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+    .trust-indicators {
+        justify-content: center;
+    }
+    .trust-item {
+        text-align: center;
+    }
+    .home-hero-section {
+        padding: 2rem 1.5rem 3rem 1.5rem;
+        min-height: auto;
+    }
+    .hero-main-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .challenges,
+    .capability-depth {
+        padding: 1.5rem;
+    }
+    .section-title {
+        font-size: 1.5rem;
+    }
+    .hero-title-section {
+        padding: 2rem 1rem 1rem 1rem;
+    }
+    .hero-badge span {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+    .hero-badge {
+        padding: 0.5rem 1.2rem;
+        gap: 8px;
+    }
+    .hero-badge i {
+        font-size: 1.2rem;
+    }
+    /* Hero */
+    .hero-description {
+        font-size: 1rem;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .btn-primary {
+        width: 100%;
+        justify-content: center;
+    }
+    .trust-number {
+        font-size: 1.4rem;
+    }
+    .trust-label {
+        font-size: 0.7rem;
+    }
+    .hero-main-title {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+    /* stats */
+    .stats-container {
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    .stat-card {
+        min-width: 160px;
+        padding: 0.8rem 1rem;
+    }
+    .stat-card:not(:last-child)::after {
+        display: none;
+    }
+    .stat-number {
+        font-size: 2.8rem;
+    }
+    .stat-number span {
+        font-size: 1.8rem;
+    }
+    .stat-label {
+        font-size: 0.7rem;
+        letter-spacing: 1.5px;
+    }
+}
+
+@media (max-width: 576px) {
+    .feature-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+        min-width: 40px;
+    }
+    .feature-text h3 {
+        font-size: 1rem;
+    }
+    .feature-text p {
+        font-size: 0.8rem;
+    }
+    .section-title {
+        font-size: 1.4rem;
+    }
+    .skill-name {
+        font-size: 0.8rem;
+    }
+    .skill-percent {
+        font-size: 0.7rem;
+    }
+    .stat-card {
+        min-width: 140px;
+    }
+    .stat-number {
+        font-size: 2.2rem;
+    }
+    .stat-number span {
+        font-size: 1.4rem;
+    }
+    .hero-description {
+        font-size: 0.9rem;
+    }
+    .trust-indicators {
+        gap: 1rem;
+    }
+    .trust-number {
+        font-size: 1.2rem;
+    }
+    .trust-label {
+        font-size: 0.6rem;
+    }
+    .hero-badge-new {
+        padding: 0.4rem 1rem;
+    }
+    .badge-text {
+        font-size: 0.7rem;
+    }
+    .hero-main-title {
+        font-size: 1.4rem;
+        line-height: 1.35;
+    }
+}
+/* ============================================================
+   WHO WE ARE SECTION - Image Style
+   ============================================================ */
+
+.who-we-are-section {
+    padding: 4rem 2rem 1.5rem 2rem;
+    background: #FFFFFF;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.who-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+/* ===== LEFT SIDE ===== */
+.who-left {
+    padding-top: 0.5rem;
+}
+
+.who-tag {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: #2563EB;
+    margin-bottom: 0.75rem;
+}
+
+.who-tag-line {
+    display: inline-block;
+    width: 40px;
+    height: 3px;
+    background: #2563EB;
+    border-radius: 4px;
+}
+
+.who-heading {
+    font-family: 'Zodiak', 'Times New Roman', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #0B2B42;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+/* ===== RIGHT SIDE ===== */
+.who-right {
+    padding-top: 0.5rem;
+}
+
+.who-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4A627A;
+    margin-bottom: 1.5rem;
+    font-weight: 450;
+    max-width: 650px;
+}
+
+.who-tagline {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0D2818;
+    letter-spacing: 0.5px;
+    padding-left: 1.2rem;
+    border-left: 4px solid #15803D;
+    line-height: 1.4;
+}
+
+/* ============================
+   RESPONSIVE - Who We Are
+   ========================== */
+
+@media (max-width: 992px) {
+    .who-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .who-heading {
+        font-size: 2.2rem;
+    }
+    
+    .who-description {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+    
+    .who-we-are-section {
+        padding: 3rem 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .who-heading {
+        font-size: 1.8rem;
+    }
+    
+    .who-description {
+        font-size: 0.95rem;
+    }
+    
+    .who-tagline {
+        font-size: 0.9rem;
+        padding-left: 1rem;
+    }
+    
+    .who-tag {
+        font-size: 0.75rem;
+    }
+    
+    .who-we-are-section {
+        padding: 2.5rem 1.25rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .who-heading {
+        font-size: 1.5rem;
+    }
+    
+    .who-description {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    
+    .who-tagline {
+        font-size: 0.85rem;
+        padding-left: 0.8rem;
+    }
+    
+    .who-tag {
+        font-size: 0.7rem;
+        gap: 8px;
+    }
+    
+    .who-tag-line {
+        width: 30px;
+    }
+}
+/* who we are ke niche wla image ka css h */
+.who-image-wrapper {
+    width: 100%;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(37, 99, 235, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.who-image-wrapper:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 28px 50px -16px rgba(0, 0, 0, 0.2);
+}
+
+.who-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+    background: #f0f4fa;
+}
+@media (max-width: 992px) {
+    .who-image-wrapper img {
+        aspect-ratio: 16 / 9;  /* ✅ Tablet/mobile pe image thoda wide ho jayegi */
+    }
+}
+
+/* ============================================================
+   OUR CORE STRENGTHS SECTION
+   ============================================================ */
+
+.core-strengths-section {
+    padding: 1.5rem 2rem 5rem 2rem;
+    background: linear-gradient(135deg, #F8FAFE 0%, #EFF4FC 100%);
+}
+
+.strengths-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Heading */
+.strengths-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.strengths-title {
+    font-family: 'Zodiak', 'Times New Roman', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #0B2B42;
+    letter-spacing: -0.02em;
+    position: relative;
+    display: inline-block;
+}
+
+.strengths-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #2563EB, #3B82F6);
+    border-radius: 4px;
+}
+
+/* Grid */
+.strengths-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+/* Card */
+.strength-card {
+    background: #FFFFFF;
+    border-radius: 1.5rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(37, 99, 235, 0.08);
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.strength-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #2563EB, #3B82F6, #60A5FA);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.strength-card:hover::before {
+    transform: scaleX(1);
+}
+
+.strength-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.2);
+    border-color: rgba(37, 99, 235, 0.2);
+}
+
+/* ===== SQUARE ICON STYLES ===== */
+.strength-icon {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, #EFF4FC 0%, #DBEAFE 100%);
+    border-radius: 16px;  /* Square with slight rounded corners */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(37, 99, 235, 0.1);
+}
+
+.strength-icon i {
+    font-size: 2.2rem;
+    color: #2563EB;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect - icon background changes to blue */
+.strength-card:hover .strength-icon {
+    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+    border-color: #2563EB;
+    transform: scale(1.05);
+}
+
+.strength-card:hover .strength-icon i {
+    color: #FFFFFF;
+}
+
+/* Content */
+.strength-heading {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0B2B42;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.strength-description {
+    font-size: 0.9rem;
+    color: #5B6E8C;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+
+@media (max-width: 992px) {
+    .strengths-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .strengths-title {
+        font-size: 2.2rem;
+    }
+    
+    .core-strengths-section {
+        padding: 3rem 1.5rem 4rem 1.5rem;
+    }
+    
+    .strength-icon {
+        width: 64px;
+        height: 64px;
+    }
+    
+    .strength-icon i {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .strengths-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    
+    .strengths-title {
+        font-size: 1.8rem;
+    }
+    
+    .strength-card {
+        padding: 1.5rem 1.25rem;
+    }
+    
+    .strength-heading {
+        font-size: 1rem;
+    }
+    
+    .strength-description {
+        font-size: 0.85rem;
+    }
+    
+    .strength-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 14px;
+    }
+    
+    .strength-icon i {
+        font-size: 1.6rem;
+    }
+    
+    .core-strengths-section {
+        padding: 2.5rem 1.25rem 3rem 1.25rem;
+    }
+}
+
+/* ============================================================
+   OUR PRODUCTS & TECHNOLOGY SOLUTIONS SECTION
+   ============================================================ */
+
+.products-section {
+    padding: 4rem 2rem 5rem 2rem;
+    background: #FFFFFF;
+}
+
+.products-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* ===== LEFT SIDE - CONTENT ===== */
+.products-content {
+    padding-right: 1rem;
+}
+
+.products-header {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.products-title {
+    font-family: 'Zodiak', 'Times New Roman', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #0B2B42;
+    letter-spacing: -0.02em;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+}
+
+.products-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #2563EB, #3B82F6);
+    border-radius: 4px;
+    transform: translateX(-50%);
+}
+
+/* Product Item */
+.product-item {
+    display: flex;
+    gap: 1.25rem;
+    margin-bottom: 1rem;
+     padding: 1rem 1.25rem; 
+    border-radius: 1.5rem;
+    background: #FFFFFF;
+    border: 1px solid rgba(37, 99, 235, 0.06);
+    transition: all 0.35s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.product-item:hover {
+    transform: translateX(8px);
+    box-shadow: 0 12px 30px -12px rgba(37, 99, 235, 0.12);
+    border-color: rgba(37, 99, 235, 0.15);
+}
+
+/* Product Icon */
+.product-icon {
+    min-width: 52px;
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, #EFF4FC 0%, #DBEAFE 100%);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.product-icon i {
+    font-size: 1.6rem;
+    color: #2563EB;
+    transition: all 0.3s ease;
+}
+
+.product-item:hover .product-icon {
+    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+}
+
+.product-item:hover .product-icon i {
+    color: #FFFFFF;
+}
+
+/* Product Info */
+.product-info {
+    flex: 1;
+}
+
+.product-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0B2B42;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.3;
+}
+
+.product-description {
+    font-size: 0.9rem;
+    color: #5B6E8C;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ===== RIGHT SIDE - IMAGE ===== */
+.products-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.products-image-wrapper {
+    width: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(37, 99, 235, 0.1);
+    transition: all 0.4s ease;
+    background: #F8FAFE;
+}
+
+.products-image-wrapper:hover {
+    transform: scale(1.01);
+    box-shadow: 0 30px 60px -18px rgba(37, 99, 235, 0.2);
+}
+
+.products-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+
+@media (max-width: 992px) {
+    .products-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .products-title {
+        font-size: 2.2rem;
+    }
+    
+    .products-section {
+        padding: 3rem 1.5rem 4rem 1.5rem;
+    }
+    
+    .products-content {
+        padding-right: 0;
+    }
+    
+    .products-image-wrapper img {
+        aspect-ratio: 16 / 9;
+    }
+}
+
+@media (max-width: 768px) {
+    .products-title {
+        font-size: 1.5rem;    /* ✅ 1.8rem se 1.5rem kiya */
+        white-space: normal;   /* ✅ Mobile pe wrap hone de */
+    }
+}
+    
+    .product-item {
+        padding: 1.25rem;
+        gap: 1rem;
+    }
+    
+    .product-icon {
+        min-width: 44px;
+        width: 44px;
+        height: 44px;
+    }
+    
+    .product-icon i {
+        font-size: 1.3rem;
+    }
+    
+    .product-name {
+        font-size: 1rem;
+    }
+    
+    .product-description {
+        font-size: 0.85rem;
+    }
+    
+    .products-section {
+        padding: 2.5rem 1.25rem 3rem 1.25rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .products-title {
+        font-size: 1.5rem;
+    }
+    
+    .products-title::after {
+        width: 60px;
+        height: 3px;
+        bottom: -10px;
+    }
+    
+    .product-item {
+        padding: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .product-icon {
+        min-width: 48px;
+        width: 48px;
+        height: 48px;
+    }
+    
+    .product-icon i {
+        font-size: 1.4rem;
+    }
+    
+    .products-image-wrapper {
+        border-radius: 1.25rem;
+    }
+    
+    .products-image-wrapper img {
+        aspect-ratio: 4 / 3;
+    }
+}
+
+/* ============================================================
+   DOMAIN EXPERTISE ACROSS SECTORS SECTION
+   ============================================================ */
+
+.domain-expertise-section {
+    padding: 1.5rem 2rem 5rem 2rem;  /* ✅ top padding kam */
+    background: linear-gradient(135deg, #F8FAFE 0%, #FFFFFF 100%);
+}
+
+.domain-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===== HEADING ===== */
+.domain-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    margin-top: 0; 
+}
+
+.domain-title {
+    font-family: 'Barlow', sans-serif; 
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #0B2B42;
+    letter-spacing: -0.02em;
+    position: relative;
+    display: inline-block;
+     margin-top: 0; 
+}
+
+.domain-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #2563EB, #3B82F6);
+    border-radius: 4px;
+}
+
+/* ===== CONTENT AREA: Left Image + Right List ===== */
+.domain-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+/* ===== LEFT SIDE - IMAGE ===== */
+.domain-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.domain-image-wrapper {
+    width: 100%;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(37, 99, 235, 0.1);
+    transition: all 0.4s ease;
+    background: #F8FAFE;
+}
+
+.domain-image-wrapper:hover {
+    transform: scale(1.01);
+    box-shadow: 0 30px 60px -18px rgba(37, 99, 235, 0.18);
+}
+
+.domain-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+   object-fit: contain; 
+    aspect-ratio: 4 / 3;
+}
+
+/* ===== RIGHT SIDE - LIST ===== */
+.domain-list {
+    padding-left: 0.5rem;
+}
+
+.domain-subtitle {
+    font-family: 'Zodiak', 'Times New Roman', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0B2B42;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+}
+
+.domain-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.domain-items li {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1rem 1.25rem;
+    background: #FFFFFF;
+    border-radius: 1.25rem;
+    border: 1px solid rgba(37, 99, 235, 0.06);
+    transition: all 0.35s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.domain-items li:hover {
+    transform: translateX(8px);
+    box-shadow: 0 12px 30px -12px rgba(37, 99, 235, 0.12);
+    border-color: rgba(37, 99, 235, 0.15);
+}
+
+.domain-items li i {
+    color: #2563EB;
+    font-size: 1.2rem;
+    margin-top: 0.15rem;
+    min-width: 20px;
+    flex-shrink: 0;
+}
+
+.domain-items li div {
+    display: flex;
+    flex-direction: column;
+}
+
+.domain-items li strong {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0B2B42;
+    margin-bottom: 0.25rem;
+}
+
+.domain-items li span {
+    font-size: 0.9rem;
+    color: #5B6E8C;
+    line-height: 1.5;
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+
+@media (max-width: 992px) {
+    .domain-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .domain-title {
+        font-size: 2.2rem;
+    }
+    
+    .domain-subtitle {
+        font-size: 1.8rem;
+    }
+    
+    .domain-expertise-section {
+        padding: 0.5rem 1.5rem 4rem 1.5rem;
+    }
+    
+    .domain-image-wrapper img {
+        aspect-ratio: 16 / 9;
+    }
+}
+
+@media (max-width: 768px) {
+    .domain-title {
+        font-size: 1.8rem;
+    }
+    
+    .domain-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .domain-items li {
+        padding: 0.75rem 1rem;
+    }
+    
+    .domain-items li strong {
+        font-size: 0.95rem;
+    }
+    
+    .domain-items li span {
+        font-size: 0.85rem;
+    }
+    
+    .domain-items {
+        gap: 1rem;
+    }
+    
+    .domain-expertise-section {
+        padding: 1.5rem 1.25rem 3rem 1.25rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .domain-title {
+        font-size: 1.5rem;
+    }
+    
+    .domain-title::after {
+        width: 60px;
+        height: 3px;
+        bottom: -10px;
+    }
+    
+    .domain-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .domain-items li {
+        padding: 0.75rem;
+        gap: 0.75rem;
+    }
+    
+    .domain-items li i {
+        font-size: 1rem;
+    }
+    
+    .domain-items li strong {
+        font-size: 0.9rem;
+    }
+    
+    .domain-items li span {
+        font-size: 0.8rem;
+    }
+    
+    .domain-image-wrapper {
+        border-radius: 1rem;
+    }
+    
+    .domain-image-wrapper img {
+        aspect-ratio: 4 / 3;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <%- include("common/header.ejs") %>
+
+   <!-- 
+=========================================
+  NEW SECTION: HOME INTRO / HERO SECTION
+  Place this code right after the <body> tag 
+  and before the existing <section class="capability-section">
+=========================================
+-->
+
+<!-- New Hero Section - Positioned directly after header -->
+<section class="home-hero-section">
+    <div class="hero-background-shape"></div>
+    <div class="hero-container">
+        <div class="hero-content">
+            <!-- Animated Badge -->
+            <div class="hero-badge-new">
+                <span class="badge-pulse"></span>
+                <span class="badge-text">Trusted by 50+ Enterprises & Government Bodies</span>
+            </div>
+            
+            <!-- Main Heading - EXACT TEXT AS REQUESTED: "Government Advisory and Digital Execution for Public Sector & Regulated Enterprises" -->
+            <h1 class="hero-main-title">
+                Government Advisory and<br>Contract Management<br>Consulting
+            </h1>
+            
+            <!-- Description -->
+            <p class="hero-description">
+                 A specialized advisory firm delivering policy-to-execution support to
+                 Central and State Government departments across India — recognized
+                 for governance-first, compliance-driven, and audit-ready program
+                 delivery.
+            </p>
+            
+            <!-- CTA Buttons - Only Explore Services remains -->
+            <div class="hero-buttons">
+                <a href="#" class="btn-primary">
+                    Explore Services
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <!-- Trust Indicators -->
+            <div class="trust-indicators">
+                <div class="trust-item">
+                    <div class="trust-number">10+</div>
+                    <div class="trust-label">Years of Excellence</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-number">150+</div>
+                    <div class="trust-label">Projects Delivered</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-number">98%</div>
+                    <div class="trust-label">Client Retention</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ========================================= -->
+        <!-- RIGHT SIDE VISUAL: INDIA MAP + CAPABILITY MATRIX (one strong visual) -->
+        <!-- ========================================= -->
+        <div class="hero-right">
+            <div class="hero-visual-card">
+                <div class="map-illustration">
+                    <i class="fas fa-map-india"></i> <!-- elegant India map icon from Font Awesome -->
+                    <div style="font-weight:800; margin: 0.5rem 0 0.25rem;">States Served Across India</div>
+                    <div class="state-list">UP, Maharashtra, Delhi, Karnataka, TN, Gujarat, WB, Rajasthan, Telangana, Punjab +7 more</div>
+                    <hr>
+                    <div class="capability-pills">
+                        <span class="pill"><i class="fas fa-chalkboard-user"></i> PMU</span>
+                        <span class="pill"><i class="fas fa-file-signature"></i> Procurement</span>
+                        <span class="pill"><i class="fas fa-tower-cell"></i> Telecom</span>
+                        <span class="pill"><i class="fas fa-building"></i> Enterprise Platforms</span>
+                        <span class="pill"><i class="fas fa-shield-haltered"></i> Compliance</span>
+                    </div>
+                    <!-- additional subtle trust line -->
+                    <div style="font-size:0.65rem; margin-top: 1rem; color:#5f7f9e;">
+                        <i class="fas fa-check-circle"></i> TRUSTED ACROSS 15+ STATES
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========= END RIGHT VISUAL ========== -->
+    </div>
+</section>
+<!-- =========================================
+  WHO WE ARE SECTION - Our Purpose Right Side
+  ========================================= -->
+<section class="who-we-are-section">
+    <div class="who-container">
+        <!-- Left Side: Sirf Image -->
+        <div class="who-left">
+            <div class="who-image-wrapper">
+                <img src="assist/ company img.jpeg" alt="Our Purpose - Company image">
+            </div>
+        </div>
+        
+        <!-- Right Side: Tag + Heading + Description -->
+        <div class="who-right">
+            <div class="who-tag">
+                <span class="who-tag-line"></span>
+                Who We Are
+            </div>
+            <h2 class="who-heading">Our Purpose</h2>
+            
+            <p class="who-description">
+                Our Company is a Government Advisory and Consulting firm providing end-to-end support to Central and State Government departments across India. We specialize in procurement advisory, contract management, and program governance — enabling transparent, efficient, and successful public sector program delivery.
+            </p>
+            <div class="who-tagline">
+                Governance-first. Compliance-driven. Audit-ready.
+            </div>
+        </div>
+    </div>
+</section>
+ 
+<!-- =========================================
+  OUR CORE STRENGTHS SECTION
+  ========================================= -->
+<section class="core-strengths-section">
+    <div class="strengths-container">
+        <!-- Heading -->
+        <div class="strengths-header">
+            <h2 class="strengths-title">Our Core Strengths</h2>
+        </div>
+        
+        <!-- Strengths Grid -->
+        <div class="strengths-grid">
+            <!-- Card 1 - 28+ Years -->
+            <div class="strength-card">
+                <div class="strength-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <h3 class="strength-heading">28+ Years Combined Experience</h3>
+                <p class="strength-description">Partners with deep expertise in Government and Public Sector Consulting across India</p>
+            </div>
+            
+            <!-- Card 2 - DPR & RFP -->
+            <div class="strength-card">
+                <div class="strength-icon">
+                    <i class="fas fa-file-contract"></i>
+                </div>
+                <h3 class="strength-heading">End-to-End DPR & RFP Expertise</h3>
+                <p class="strength-description">Full lifecycle capability from feasibility studies to contract execution and closure</p>
+            </div>
+            
+            <!-- Card 3 - 15+ States -->
+            <div class="strength-card">
+                <div class="strength-icon">
+                    <i class="fas fa-map-marked-alt"></i>
+                </div>
+                <h3 class="strength-heading">15+ States, Multiple Departments</h3>
+                <p class="strength-description">Hands-on engagement across diverse state governments and central departments</p>
+            </div>
+            
+            <!-- Card 4 - Big Four Team -->
+            <div class="strength-card">
+                <div class="strength-icon">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h3 class="strength-heading">10-Member Big Four Team</h3>
+                <p class="strength-description">Skilled consultants each with 10+ years of Big Four consulting experience</p>
+            </div>
+        </div>
+    </div>
+</section>
+   
+<!-- =========================================
+  OUR PRODUCTS & TECHNOLOGY SOLUTIONS SECTION
+  ========================================= -->
+<section class="products-section">
+    <div class="products-container">
+        <!-- Left Side: Content -->
+        <div class="products-content">
+            <!-- Heading -->
+            <div class="products-header">
+                <h2 class="products-title">Our Products & Technology Solutions</h2>
+            </div>
+            
+            <!-- Product 1 - ODDU -->
+            <div class="product-item">
+                <div class="product-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">ODDU — AI-Powered ITSM Platform</h3>
+                    <p class="product-description">Automates IT operations, reduces support load, and enhances productivity with AI-driven automation and self-service solutions. Trusted by enterprises across industries.</p>
+                </div>
+            </div>
+            
+            <!-- Product 2 - ZOHO ERP -->
+            <div class="product-item">
+                <div class="product-icon">
+                    <i class="fas fa-cubes"></i>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">ZOHO ERP Solution</h3>
+                    <p class="product-description">End-to-end enterprise resource planning for government bodies and enterprises — streamlining finance, HR, procurement, and operations on a unified platform.</p>
+                </div>
+            </div>
+            
+            <!-- Product 3 - WhatsApp Business -->
+            <div class="product-item">
+                <div class="product-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">WhatsApp Business Marketing & Software Development</h3>
+                    <p class="product-description">Custom software development, WhatsApp Business integration, and digital marketing solutions tailored for enterprises, government bodies, and startups.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right Side: Image -->
+        <div class="products-image">
+            <div class="products-image-wrapper">
+                <img src="assist/ vedanova img.jpeg" alt="Our Products & Technology Solutions">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================
+  DOMAIN EXPERTISE ACROSS SECTORS SECTION
+  ========================================= -->
+<section class="domain-expertise-section">
+    <div class="domain-container">
+        <!-- Heading -->
+        <div class="domain-header">
+            <h2 class="domain-title">Domain Expertise Across Sectors</h2>
+        </div>
+        
+        <!-- Content Area: Left Image + Right Content -->
+        <div class="domain-content">
+            <!-- Left Side: Image -->
+            <div class="domain-image">
+                <div class="domain-image-wrapper">
+                    <img src="assist/vedanova 2.jpeg" alt="Domain Expertise Across Sectors">
+                </div>
+            </div>
+            
+            <!-- Right Side: Sectors We Serve -->
+            <div class="domain-list">
+                <h3 class="domain-subtitle">Sectors We Serve</h3>
+                
+                <ul class="domain-items">
+                    <li>
+                        <i class="fas fa-chevron-right"></i>
+                        <div>
+                            <strong>Telecom & IT Infrastructure</strong>
+                            <span>Network rollout, digital connectivity programs, and IT modernization</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-chevron-right"></i>
+                        <div>
+                            <strong>Skill Development & Education</strong>
+                            <span>National skilling missions, training infrastructure, and curriculum advisory</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-chevron-right"></i>
+                        <div>
+                            <strong>ERP & Software Implementations</strong>
+                            <span>Government ERP deployments, e-governance platforms, and system integration</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-chevron-right"></i>
+                        <div>
+                            <strong>Cyber Security & Compliance</strong>
+                            <span>Security frameworks, data protection, and regulatory alignment</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+    
+<%- include("common/footer.ejs") %>
+
+<script>
+     // Carousel initialization (yeh same rakho)
+    const myCarousel = document.querySelector('#carouselExampleIndicators');
+    if (myCarousel) {
+        new bootstrap.Carousel(myCarousel, {
+            interval: 2000,
+            ride: 'carousel',
+            pause: false
+        });
+    }
+
+    // Progress bar animation - FIXED
+    function animateProgressBars() {
+        const progressFills = document.querySelectorAll('.progress-fill');
+        progressFills.forEach(bar => {
+            const style = bar.getAttribute('style');
+            if (style) {
+                const match = style.match(/width:\s*(\d+)%/);
+                if (match && match[1]) {
+                    const width = match[1];
+                    bar.style.width = '0%';
+                    setTimeout(() => {
+                        bar.style.width = width + '%';
+                    }, 50);
+                }
+            }
+        });
+    }
+    
+    // Load pe progress bars animate karo
+    window.addEventListener('load', function() {
+        animateProgressBars();
+        
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+</html>
