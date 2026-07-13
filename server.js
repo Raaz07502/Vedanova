@@ -38,6 +38,11 @@ app.get("/contact", (req, res) => {
     res.render("contact");
 });
 
+// about routes 
+app.get("/about", (req, res) => {
+    res.render("about");
+})
+
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
