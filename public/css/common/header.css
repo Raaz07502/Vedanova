@@ -44,7 +44,7 @@ body {
   top: 0;
   z-index: 1000;
   width: 100%;
-  background: linear-gradient(135deg, var(--header-blue) 0%, var(--header-light-blue) 100%);
+  background: #0a2b3e;
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   transition: box-shadow var(--transition-fast);

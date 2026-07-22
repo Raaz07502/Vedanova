@@ -15,7 +15,7 @@
 
 <style>
       /* ============================================================
-   CLEAN CSS - Only styles being used on the page
+   DARK THEME - Nexalogic Style
    ============================================================ */
 
 * {
@@ -26,8 +26,8 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #ffffff;
-    color: #1A2C3E;
+    background: #080d1a;
+    color: #e8edf5;
     scroll-behavior: smooth;
 }
 
@@ -42,35 +42,39 @@ body {
     object-fit: cover;
 }
 
-/* ===== HERO TITLE SECTION (old - might not be used now) ===== */
+/* ===== HERO TITLE SECTION ===== */
 .hero-title-section {
     text-align: center;
     padding: 3rem 1.5rem 1.5rem 1.5rem;
-    background: linear-gradient(135deg, #F8FAFE 0%, #F1F5F9 100%);
+    background: linear-gradient(135deg, #0a1225 0%, #111d3a 100%);
 }
 .hero-badge {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: linear-gradient(135deg, #7597b9 0%, #6d94ad 100%);
+    background: linear-gradient(135deg, #1a3a6a 0%, #0f284a 100%);
     padding: 0.6rem 1.5rem;
     border-radius: 80px;
     margin-bottom: 0.5rem;
+    border: 1px solid rgba(0, 212, 255, 0.15);
 }
 .hero-badge i {
     font-size: 2rem;
-    color: #FFD966;
+    color: #00d4ff;
 }
 .hero-badge span {
     font-size: 1.8rem;
     font-weight: 800;
     letter-spacing: 2px;
-    color: white;
+    background: linear-gradient(135deg, #00d4ff, #7b2ffc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     text-transform: uppercase;
 }
 .hero-subtitle {
     font-size: 1rem;
-    color: #4A627A;
+    color: #8aa8c9;
     margin-top: 0.75rem;
     font-weight: 500;
 }
@@ -78,7 +82,7 @@ body {
 /* ===== CAPABILITY SECTION (Cards) ===== */
 .capability-section {
     padding: 0rem 1.5rem 5rem 1.5rem;
-    background: linear-gradient(135deg, #F8FAFE 0%, #F1F5F9 100%);
+    background: linear-gradient(135deg, #080d1a 0%, #0f1a30 100%);
 }
 .showcase-grid {
     max-width: 1400px;
@@ -90,12 +94,13 @@ body {
 }
 .challenges,
 .capability-depth {
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
     border-radius: 1.5rem;
-    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4);
     padding: 2rem 2rem;
     transition: all 0.35s ease;
-    border: 1px solid rgba(44, 123, 229, 0.15);
+    border: 1px solid rgba(0, 212, 255, 0.08);
     position: relative;
     overflow: hidden;
 }
@@ -107,7 +112,7 @@ body {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #2563EB, #3B82F6, #60A5FA);
+    background: linear-gradient(90deg, #00d4ff, #7b2ffc);
     transform: scaleX(0);
     transition: transform 0.4s ease;
 }
@@ -118,16 +123,16 @@ body {
 .challenges:hover,
 .capability-depth:hover {
     transform: translateY(-6px);
-    box-shadow: 0 28px 45px -18px rgba(0, 0, 0, 0.2);
-    border-color: rgba(44, 123, 229, 0.3);
+    box-shadow: 0 28px 45px -18px rgba(0, 212, 255, 0.15);
+    border-color: rgba(0, 212, 255, 0.2);
 }
 .section-label {
     font-size: 0.75rem;
     letter-spacing: 2px;
     text-transform: uppercase;
     font-weight: 700;
-    color: #2563EB;
-    background: #EFF4FC;
+    color: #00d4ff;
+    background: rgba(0, 212, 255, 0.1);
     display: inline-block;
     padding: 0.3rem 1rem;
     border-radius: 30px;
@@ -138,13 +143,13 @@ body {
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 0.75rem;
-    color: #0B2B42;
+    color: #e8edf5;
     letter-spacing: -0.02em;
 }
 .section-sub {
     font-size: 0.95rem;
-    color: #5B6E8C;
-    border-left: 3px solid #2563EB;
+    color: #8aa8c9;
+    border-left: 3px solid #00d4ff;
     padding-left: 1rem;
     margin-bottom: 1.8rem;
     font-weight: 500;
@@ -165,18 +170,18 @@ body {
     font-size: 1.4rem;
     font-weight: 800;
     min-width: 48px;
-    background: #F0F6FF;
+    background: rgba(0, 212, 255, 0.08);
     width: 48px;
     height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 14px;
-    color: #2563EB;
+    color: #00d4ff;
     transition: 0.25s;
 }
 .feature-item:hover .feature-icon {
-    background: #2563EB;
+    background: linear-gradient(135deg, #00d4ff, #7b2ffc);
     color: white;
     transform: scale(1.02);
 }
@@ -184,11 +189,11 @@ body {
     font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 0.35rem;
-    color: #0F2C44;
+    color: #e8edf5;
 }
 .feature-text p {
     font-size: 0.88rem;
-    color: #5B6E8C;
+    color: #8aa8c9;
     line-height: 1.45;
     margin: 0;
 }
@@ -210,25 +215,25 @@ body {
     font-size: 0.9rem;
 }
 .skill-name {
-    color: #1F3B4C;
+    color: #c8ddf5;
     font-weight: 600;
 }
 .skill-percent {
-    color: #2563EB;
+    color: #00d4ff;
     font-weight: 800;
-    background: #EFF4FC;
+    background: rgba(0, 212, 255, 0.1);
     padding: 0.2rem 0.7rem;
     border-radius: 20px;
     font-size: 0.75rem;
 }
 .progress-bar-bg {
-    background-color: #E8EDF5;
+    background-color: rgba(255, 255, 255, 0.06);
     border-radius: 12px;
     height: 8px;
     overflow: hidden;
 }
 .progress-fill {
-    background: linear-gradient(90deg, #2563EB, #3B82F6);
+    background: linear-gradient(90deg, #00d4ff, #7b2ffc);
     width: 100%;
     height: 100%;
     border-radius: 12px;
@@ -237,9 +242,11 @@ body {
 
 /* ===== STATS SECTION ===== */
 .stats-section {
-    background: linear-gradient(135deg, #0B2B42 0%, #1A4A6E 100%);
+    background: linear-gradient(135deg, #080d1a 0%, #0f1a30 100%);
     padding: 1.5rem 1.5rem;
     position: relative;
+    border-top: 1px solid rgba(0, 212, 255, 0.05);
+    border-bottom: 1px solid rgba(0, 212, 255, 0.05);
 }
 .stats-container {
     max-width: 1200px;
@@ -266,7 +273,7 @@ body {
     transform: translateY(-50%);
     width: 2px;
     height: 50px;
-    background: linear-gradient(180deg, transparent, #FFD966, #FFD966, transparent);
+    background: linear-gradient(180deg, transparent, rgba(0, 212, 255, 0.3), transparent);
 }
 .stat-card:hover {
     transform: translateY(-8px);
@@ -274,13 +281,13 @@ body {
 .stat-number {
     font-size: 3.5rem;
     font-weight: 800;
-    background: linear-gradient(135deg, #FFD966 0%, #FFB347 100%);
+    background: linear-gradient(135deg, #00d4ff 0%, #7b2ffc 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 .stat-number span {
-    background: linear-gradient(135deg, #FFD966 0%, #FFB347 100%);
+    background: linear-gradient(135deg, #00d4ff 0%, #7b2ffc 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -289,7 +296,7 @@ body {
     font-size: 0.8rem;
     letter-spacing: 2.5px;
     font-weight: 700;
-    color: #FFFFFF;
+    color: #8aa8c9;
     text-transform: uppercase;
     opacity: 0.85;
 }
@@ -297,7 +304,7 @@ body {
 /* ===== NEW HOME HERO SECTION ===== */
 .home-hero-section {
     position: relative;
-    background: linear-gradient(135deg, #F8FAFE 0%, #FFFFFF 100%);
+    background: linear-gradient(135deg, #080d1a 0%, #0f1a30 100%);
     overflow: hidden;
     padding: 3rem 2rem 1.5rem 2rem;
     min-height: 70vh;
@@ -310,7 +317,7 @@ body {
     right: -10%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, rgba(37, 99, 235, 0) 70%);
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.05) 0%, rgba(0, 212, 255, 0) 70%);
     border-radius: 50%;
     z-index: 0;
 }
@@ -331,34 +338,34 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: rgba(37, 99, 235, 0.1);
+    background: rgba(0, 212, 255, 0.06);
     backdrop-filter: blur(4px);
     padding: 0.5rem 1.2rem;
     border-radius: 100px;
     margin-bottom: 1.8rem;
-    border: 1px solid rgba(37, 99, 235, 0.2);
+    border: 1px solid rgba(0, 212, 255, 0.15);
 }
 .badge-pulse {
     width: 10px;
     height: 10px;
-    background: #2563EB;
+    background: #00d4ff;
     border-radius: 50%;
-    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.5);
+    box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.5);
     animation: pulse 1.5s infinite;
 }
 @keyframes pulse {
-    0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.5); }
-    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(37, 99, 235, 0); }
-    100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+    0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.5); }
+    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(0, 212, 255, 0); }
+    100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(0, 212, 255, 0); }
 }
 .badge-text {
     font-size: 0.8rem;
     font-weight: 600;
-    color: #1E40AF;
+    color: #8aa8c9;
     letter-spacing: 0.5px;
 }
 
-/* ★ MAIN TITLE COLOR - YAHAN SE CHANGE HOGA ★ */
+/* ★ MAIN TITLE - DARK THEME ★ */
 .hero-main-title {
     font-family: 'Zodiak', 'Times New Roman', serif;
     font-size: 2.5rem;
@@ -366,7 +373,7 @@ body {
     line-height: 1.25;
     margin-bottom: 1.5rem;
     letter-spacing: -0.01em;
-    background: linear-gradient(110deg, #0F2C44 0%, #2563EB 70%); 
+    background: linear-gradient(110deg, #ffffff 0%, #00d4ff 70%, #7b2ffc 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -375,9 +382,9 @@ body {
 .hero-description {
     font-size: 1.1rem;
     line-height: 1.6;
-    color: #4A627A;
+    color: #8aa8c9;
     margin-bottom: 2rem;
-    font-weight: 500;
+    font-weight: 400;
 }
 .hero-buttons {
     display: flex;
@@ -388,26 +395,25 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+    background: linear-gradient(135deg, #00d4ff 0%, #7b2ffc 100%);
     color: white;
     padding: 0.9rem 2rem;
     border-radius: 50px;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 20px -8px rgba(37, 99, 235, 0.4);
+    box-shadow: 0 10px 20px -8px rgba(0, 212, 255, 0.3);
 }
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 25px -10px rgba(37, 99, 235, 0.5);
-    background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+    box-shadow: 0 15px 25px -10px rgba(0, 212, 255, 0.4);
     color: white;
 }
 .trust-indicators {
     display: flex;
     gap: 2rem;
     padding-top: 1rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 .trust-item {
     text-align: left;
@@ -415,12 +421,15 @@ body {
 .trust-number {
     font-size: 1.8rem;
     font-weight: 800;
-    color: #2563EB;
+    background: linear-gradient(135deg, #00d4ff, #7b2ffc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     line-height: 1.2;
 }
 .trust-label {
     font-size: 0.75rem;
-    color: #6B7280;
+    color: #8aa8c9;
     letter-spacing: 1px;
     font-weight: 500;
 }
@@ -432,42 +441,42 @@ body {
     align-items: center;
 }
 .hero-visual-card {
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(2px);
     border-radius: 2rem;
     padding: 1.4rem 1.8rem;
-    box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.12);
-    border: 1px solid rgba(37, 99, 235, 0.2);
+    box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 212, 255, 0.12);
     width: 100%;
     transition: all 0.3s ease;
     text-align: center;
 }
 .hero-visual-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 30px 45px -12px rgba(37, 99, 235, 0.25);
-    border-color: #2563EB40;
+    box-shadow: 0 30px 45px -12px rgba(0, 212, 255, 0.15);
+    border-color: rgba(0, 212, 255, 0.25);
 }
 .map-illustration i {
     font-size: 3.8rem;
-    color: #2563EB;
-    background: linear-gradient(145deg, #EFF4FF, #FFFFFF);
+    color: #00d4ff;
+    background: rgba(0, 212, 255, 0.06);
     padding: 0.8rem;
     border-radius: 80px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     margin-bottom: 0.75rem;
 }
 .map-illustration div:first-of-type {
     font-weight: 800;
     font-size: 1.15rem;
     margin: 0.5rem 0 0.25rem;
-    color: #0B2B42;
+    color: #e8edf5;
 }
 .state-list {
     font-size: 0.78rem;
-    color: #2c6280;
+    color: #8aa8c9;
     line-height: 1.4;
     font-weight: 500;
-    background: #F8F9FF;
+    background: rgba(255, 255, 255, 0.04);
     padding: 0.4rem 0.6rem;
     border-radius: 40px;
     display: inline-block;
@@ -481,28 +490,29 @@ body {
     margin-top: 1rem;
 }
 .pill {
-    background: #EFF4FC;
+    background: rgba(0, 212, 255, 0.06);
     padding: 0.3rem 0.9rem;
     border-radius: 40px;
     font-size: 0.7rem;
     font-weight: 700;
-    color: #1A4A6E;
+    color: #8aa8c9;
     letter-spacing: 0.3px;
     transition: 0.2s;
     display: inline-flex;
     align-items: center;
     gap: 4px;
+    border: 1px solid rgba(0, 212, 255, 0.05);
 }
 .pill i {
     font-size: 0.7rem;
-    color: #2563EB;
+    color: #00d4ff;
     background: transparent;
     box-shadow: none;
     padding: 0;
     margin: 0;
 }
 .pill:hover {
-    background: #2563EB;
+    background: linear-gradient(135deg, #00d4ff, #7b2ffc);
     color: white;
     transform: scale(1.02);
 }
@@ -511,7 +521,8 @@ body {
 }
 .hero-visual-card hr {
     margin: 1rem 0 0.8rem;
-    opacity: 0.3;
+    opacity: 0.1;
+    border-color: rgba(255,255,255,0.05);
 }
 
 /* ============================================================
@@ -538,7 +549,6 @@ body {
     .hero-badge {
         padding: 0.6rem 1.8rem;
     }
-    /* Hero container */
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
@@ -588,7 +598,6 @@ body {
     .hero-badge i {
         font-size: 1.2rem;
     }
-    /* Hero */
     .hero-description {
         font-size: 1rem;
     }
@@ -611,7 +620,6 @@ body {
         font-size: 1.8rem;
         line-height: 1.3;
     }
-    /* stats */
     .stats-container {
         justify-content: center;
         gap: 1.5rem;
@@ -689,14 +697,15 @@ body {
         line-height: 1.35;
     }
 }
+
 /* ============================================================
-   WHO WE ARE SECTION - Image Style
+   WHO WE ARE SECTION - DARK THEME
    ============================================================ */
 
 .who-we-are-section {
     padding: 4rem 2rem 1.5rem 2rem;
-    background: #FFFFFF;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    background: #080d1a;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.05);
 }
 
 .who-container {
@@ -708,7 +717,6 @@ body {
     align-items: start;
 }
 
-/* ===== LEFT SIDE ===== */
 .who-left {
     padding-top: 0.5rem;
 }
@@ -721,7 +729,7 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2.5px;
-    color: #2563EB;
+    color: #00d4ff;
     margin-bottom: 0.75rem;
 }
 
@@ -729,7 +737,7 @@ body {
     display: inline-block;
     width: 40px;
     height: 3px;
-    background: #2563EB;
+    background: linear-gradient(90deg, #00d4ff, #7b2ffc);
     border-radius: 4px;
 }
 
@@ -738,12 +746,14 @@ body {
     font-size: 2.8rem;
     font-weight: 700;
     line-height: 1.15;
-    color: #0B2B42;
+    background: linear-gradient(135deg, #ffffff 0%, #00d4ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin: 0;
     letter-spacing: -0.02em;
 }
 
-/* ===== RIGHT SIDE ===== */
 .who-right {
     padding-top: 0.5rem;
 }
@@ -751,43 +761,62 @@ body {
 .who-description {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #4A627A;
+    color: #8aa8c9;
     margin-bottom: 1.5rem;
-    font-weight: 450;
+    font-weight: 400;
     max-width: 650px;
 }
 
 .who-tagline {
     font-size: 1.05rem;
     font-weight: 700;
-    color: #0D2818;
+    color: #00d4ff;
     letter-spacing: 0.5px;
     padding-left: 1.2rem;
-    border-left: 4px solid #15803D;
+    border-left: 4px solid #00d4ff;
     line-height: 1.4;
 }
 
-/* ============================
-   RESPONSIVE - Who We Are
-   ========================== */
+.who-image-wrapper {
+    width: 100%;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 212, 255, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.who-image-wrapper:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 28px 50px -16px rgba(0, 212, 255, 0.1);
+}
+
+.who-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+    background: #0a1225;
+}
 
 @media (max-width: 992px) {
     .who-container {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
     .who-heading {
         font-size: 2.2rem;
     }
-    
     .who-description {
         font-size: 1rem;
         max-width: 100%;
     }
-    
     .who-we-are-section {
         padding: 3rem 1.5rem;
+    }
+    .who-image-wrapper img {
+        aspect-ratio: 16 / 9;
     }
 }
 
@@ -795,20 +824,16 @@ body {
     .who-heading {
         font-size: 1.8rem;
     }
-    
     .who-description {
         font-size: 0.95rem;
     }
-    
     .who-tagline {
         font-size: 0.9rem;
         padding-left: 1rem;
     }
-    
     .who-tag {
         font-size: 0.75rem;
     }
-    
     .who-we-are-section {
         padding: 2.5rem 1.25rem;
     }
@@ -818,62 +843,30 @@ body {
     .who-heading {
         font-size: 1.5rem;
     }
-    
     .who-description {
         font-size: 0.9rem;
         line-height: 1.6;
     }
-    
     .who-tagline {
         font-size: 0.85rem;
         padding-left: 0.8rem;
     }
-    
     .who-tag {
         font-size: 0.7rem;
         gap: 8px;
     }
-    
     .who-tag-line {
         width: 30px;
     }
 }
-/* who we are ke niche wla image ka css h */
-.who-image-wrapper {
-    width: 100%;
-    border-radius: 1.5rem;
-    overflow: hidden;
-    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
-    border: 1px solid rgba(37, 99, 235, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.who-image-wrapper:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 28px 50px -16px rgba(0, 0, 0, 0.2);
-}
-
-.who-image-wrapper img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    aspect-ratio: 4 / 3;
-    background: #f0f4fa;
-}
-@media (max-width: 992px) {
-    .who-image-wrapper img {
-        aspect-ratio: 16 / 9;  /* ✅ Tablet/mobile pe image thoda wide ho jayegi */
-    }
-}
 
 /* ============================================================
-   OUR CORE STRENGTHS SECTION
+   OUR CORE STRENGTHS SECTION - DARK THEME
    ============================================================ */
 
 .core-strengths-section {
     padding: 1.5rem 2rem 5rem 2rem;
-    background: linear-gradient(135deg, #F8FAFE 0%, #EFF4FC 100%);
+    background: linear-gradient(135deg, #080d1a 0%, #0f1a30 100%);
 }
 
 .strengths-container {
@@ -881,7 +874,6 @@ body {
     margin: 0 auto;
 }
 
-/* Heading */
 .strengths-header {
     text-align: center;
     margin-bottom: 2rem;
@@ -891,7 +883,10 @@ body {
     font-family: 'Zodiak', 'Times New Roman', serif;
     font-size: 2.8rem;
     font-weight: 700;
-    color: #0B2B42;
+    background: linear-gradient(135deg, #ffffff 0%, #00d4ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     letter-spacing: -0.02em;
     position: relative;
     display: inline-block;
@@ -905,11 +900,10 @@ body {
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, #2563EB, #3B82F6);
+    background: linear-gradient(90deg, #00d4ff, #7b2ffc);
     border-radius: 4px;
 }
 
-/* Grid */
 .strengths-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -917,14 +911,14 @@ body {
     margin-top: 1rem;
 }
 
-/* Card */
 .strength-card {
-    background: #FFFFFF;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
     border-radius: 1.5rem;
     padding: 2rem 1.5rem;
     text-align: center;
-    box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(37, 99, 235, 0.08);
+    box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 212, 255, 0.06);
     transition: all 0.35s ease;
     position: relative;
     overflow: hidden;
@@ -937,7 +931,7 @@ body {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #2563EB, #3B82F6, #60A5FA);
+    background: linear-gradient(90deg, #00d4ff, #7b2ffc);
     transform: scaleX(0);
     transition: transform 0.4s ease;
 }
@@ -948,80 +942,69 @@ body {
 
 .strength-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.2);
-    border-color: rgba(37, 99, 235, 0.2);
+    box-shadow: 0 20px 40px -15px rgba(0, 212, 255, 0.12);
+    border-color: rgba(0, 212, 255, 0.15);
 }
 
-/* ===== SQUARE ICON STYLES ===== */
 .strength-icon {
     width: 72px;
     height: 72px;
-    background: linear-gradient(135deg, #EFF4FC 0%, #DBEAFE 100%);
-    border-radius: 16px;  /* Square with slight rounded corners */
+    background: rgba(0, 212, 255, 0.06);
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 1.25rem;
     transition: all 0.3s ease;
-    border: 2px solid rgba(37, 99, 235, 0.1);
+    border: 2px solid rgba(0, 212, 255, 0.06);
 }
 
 .strength-icon i {
     font-size: 2.2rem;
-    color: #2563EB;
+    color: #00d4ff;
     transition: all 0.3s ease;
 }
 
-/* Hover effect - icon background changes to blue */
 .strength-card:hover .strength-icon {
-    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
-    border-color: #2563EB;
+    background: linear-gradient(135deg, #00d4ff, #7b2ffc);
+    border-color: transparent;
     transform: scale(1.05);
 }
 
 .strength-card:hover .strength-icon i {
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
-/* Content */
 .strength-heading {
     font-size: 1.15rem;
     font-weight: 700;
-    color: #0B2B42;
+    color: #e8edf5;
     margin-bottom: 0.75rem;
     line-height: 1.3;
 }
 
 .strength-description {
     font-size: 0.9rem;
-    color: #5B6E8C;
+    color: #8aa8c9;
     line-height: 1.6;
     margin: 0;
 }
-
-/* ============================
-   RESPONSIVE
-   ============================ */
 
 @media (max-width: 992px) {
     .strengths-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
-    
     .strengths-title {
         font-size: 2.2rem;
     }
-    
     .core-strengths-section {
         padding: 3rem 1.5rem 4rem 1.5rem;
     }
-    
     .strength-icon {
         width: 64px;
         height: 64px;
     }
-    
     .strength-icon i {
         font-size: 1.8rem;
     }
@@ -1032,45 +1015,38 @@ body {
         grid-template-columns: 1fr;
         gap: 1.25rem;
     }
-    
     .strengths-title {
         font-size: 1.8rem;
     }
-    
     .strength-card {
         padding: 1.5rem 1.25rem;
     }
-    
     .strength-heading {
         font-size: 1rem;
     }
-    
     .strength-description {
         font-size: 0.85rem;
     }
-    
     .strength-icon {
         width: 60px;
         height: 60px;
         border-radius: 14px;
     }
-    
     .strength-icon i {
         font-size: 1.6rem;
     }
-    
     .core-strengths-section {
         padding: 2.5rem 1.25rem 3rem 1.25rem;
     }
 }
 
 /* ============================================================
-   OUR PRODUCTS & TECHNOLOGY SOLUTIONS SECTION
+   OUR PRODUCTS & TECHNOLOGY SOLUTIONS - DARK THEME
    ============================================================ */
 
 .products-section {
     padding: 4rem 2rem 5rem 2rem;
-    background: #FFFFFF;
+    background: #080d1a;
 }
 
 .products-container {
@@ -1082,7 +1058,6 @@ body {
     align-items: center;
 }
 
-/* ===== LEFT SIDE - CONTENT ===== */
 .products-content {
     padding-right: 1rem;
 }
@@ -1096,7 +1071,10 @@ body {
     font-family: 'Zodiak', 'Times New Roman', serif;
     font-size: 2.2rem;
     font-weight: 700;
-    color: #0B2B42;
+    background: linear-gradient(135deg, #ffffff 0%, #00d4ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     letter-spacing: -0.02em;
     margin: 0;
     position: relative;
@@ -1110,36 +1088,34 @@ body {
     left: 50%;
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, #2563EB, #3B82F6);
+    background: linear-gradient(90deg, #00d4ff, #7b2ffc);
     border-radius: 4px;
     transform: translateX(-50%);
 }
 
-/* Product Item */
 .product-item {
     display: flex;
     gap: 1.25rem;
     margin-bottom: 1rem;
-     padding: 1rem 1.25rem; 
+    padding: 1rem 1.25rem;
     border-radius: 1.5rem;
-    background: #FFFFFF;
-    border: 1px solid rgba(37, 99, 235, 0.06);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(0, 212, 255, 0.04);
     transition: all 0.35s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .product-item:hover {
     transform: translateX(8px);
-    box-shadow: 0 12px 30px -12px rgba(37, 99, 235, 0.12);
-    border-color: rgba(37, 99, 235, 0.15);
+    box-shadow: 0 12px 30px -12px rgba(0, 212, 255, 0.08);
+    border-color: rgba(0, 212, 255, 0.12);
 }
 
-/* Product Icon */
 .product-icon {
     min-width: 52px;
     width: 52px;
     height: 52px;
-    background: linear-gradient(135deg, #EFF4FC 0%, #DBEAFE 100%);
+    background: rgba(0, 212, 255, 0.06);
     border-radius: 14px;
     display: flex;
     align-items: center;
@@ -1150,58 +1126,46 @@ body {
 
 .product-icon i {
     font-size: 1.6rem;
-    color: #2563EB;
+    color: #00d4ff;
     transition: all 0.3s ease;
 }
 
 .product-item:hover .product-icon {
-    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+    background: linear-gradient(135deg, #00d4ff, #7b2ffc);
 }
 
 .product-item:hover .product-icon i {
-    color: #FFFFFF;
-}
-
-/* Product Info */
-.product-info {
-    flex: 1;
+    color: #ffffff;
 }
 
 .product-name {
     font-size: 1.15rem;
     font-weight: 700;
-    color: #0B2B42;
+    color: #e8edf5;
     margin: 0 0 0.5rem 0;
     line-height: 1.3;
 }
 
 .product-description {
     font-size: 0.9rem;
-    color: #5B6E8C;
+    color: #8aa8c9;
     line-height: 1.7;
     margin: 0;
-}
-
-/* ===== RIGHT SIDE - IMAGE ===== */
-.products-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .products-image-wrapper {
     width: 100%;
     border-radius: 1rem;
     overflow: hidden;
-    box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.15);
-    border: 1px solid rgba(37, 99, 235, 0.1);
+    box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 212, 255, 0.06);
     transition: all 0.4s ease;
-    background: #F8FAFE;
+    background: #0a1225;
 }
 
 .products-image-wrapper:hover {
     transform: scale(1.01);
-    box-shadow: 0 30px 60px -18px rgba(37, 99, 235, 0.2);
+    box-shadow: 0 30px 60px -18px rgba(0, 212, 255, 0.08);
 }
 
 .products-image-wrapper img {
@@ -1212,28 +1176,20 @@ body {
     aspect-ratio: 4 / 3;
 }
 
-/* ============================
-   RESPONSIVE
-   ============================ */
-
 @media (max-width: 992px) {
     .products-container {
         grid-template-columns: 1fr;
         gap: 2.5rem;
     }
-    
     .products-title {
         font-size: 2.2rem;
     }
-    
     .products-section {
         padding: 3rem 1.5rem 4rem 1.5rem;
     }
-    
     .products-content {
         padding-right: 0;
     }
-    
     .products-image-wrapper img {
         aspect-ratio: 16 / 9;
     }
@@ -1241,34 +1197,27 @@ body {
 
 @media (max-width: 768px) {
     .products-title {
-        font-size: 1.5rem;    /* ✅ 1.8rem se 1.5rem kiya */
-        white-space: normal;   /* ✅ Mobile pe wrap hone de */
+        font-size: 1.5rem;
+        white-space: normal;
     }
-}
-    
     .product-item {
         padding: 1.25rem;
         gap: 1rem;
     }
-    
     .product-icon {
         min-width: 44px;
         width: 44px;
         height: 44px;
     }
-    
     .product-icon i {
         font-size: 1.3rem;
     }
-    
     .product-name {
         font-size: 1rem;
     }
-    
     .product-description {
         font-size: 0.85rem;
     }
-    
     .products-section {
         padding: 2.5rem 1.25rem 3rem 1.25rem;
     }
@@ -1278,45 +1227,39 @@ body {
     .products-title {
         font-size: 1.5rem;
     }
-    
     .products-title::after {
         width: 60px;
         height: 3px;
         bottom: -10px;
     }
-    
     .product-item {
         padding: 1rem;
         flex-direction: column;
         align-items: flex-start;
     }
-    
     .product-icon {
         min-width: 48px;
         width: 48px;
         height: 48px;
     }
-    
     .product-icon i {
         font-size: 1.4rem;
     }
-    
     .products-image-wrapper {
         border-radius: 1.25rem;
     }
-    
     .products-image-wrapper img {
         aspect-ratio: 4 / 3;
     }
 }
 
 /* ============================================================
-   DOMAIN EXPERTISE ACROSS SECTORS SECTION
+   DOMAIN EXPERTISE ACROSS SECTORS - DARK THEME
    ============================================================ */
 
 .domain-expertise-section {
-    padding: 1.5rem 2rem 5rem 2rem;  /* ✅ top padding kam */
-    background: linear-gradient(135deg, #F8FAFE 0%, #FFFFFF 100%);
+    padding: 1.5rem 2rem 5rem 2rem;
+    background: linear-gradient(135deg, #080d1a 0%, #0f1a30 100%);
 }
 
 .domain-container {
@@ -1324,22 +1267,24 @@ body {
     margin: 0 auto;
 }
 
-/* ===== HEADING ===== */
 .domain-header {
     text-align: center;
     margin-bottom: 2.5rem;
-    margin-top: 0; 
+    margin-top: 0;
 }
 
 .domain-title {
-    font-family: 'Barlow', sans-serif; 
+    font-family: 'Barlow', sans-serif;
     font-size: 2.8rem;
     font-weight: 700;
-    color: #0B2B42;
+    background: linear-gradient(135deg, #ffffff 0%, #00d4ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     letter-spacing: -0.02em;
     position: relative;
     display: inline-block;
-     margin-top: 0; 
+    margin-top: 0;
 }
 
 .domain-title::after {
@@ -1350,11 +1295,10 @@ body {
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, #2563EB, #3B82F6);
+    background: linear-gradient(90deg, #00d4ff, #7b2ffc);
     border-radius: 4px;
 }
 
-/* ===== CONTENT AREA: Left Image + Right List ===== */
 .domain-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1363,37 +1307,29 @@ body {
     margin-top: 1rem;
 }
 
-/* ===== LEFT SIDE - IMAGE ===== */
-.domain-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .domain-image-wrapper {
     width: 100%;
     border-radius: 1.5rem;
     overflow: hidden;
-    box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.12);
-    border: 1px solid rgba(37, 99, 235, 0.1);
+    box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 212, 255, 0.06);
     transition: all 0.4s ease;
-    background: #F8FAFE;
+    background: #0a1225;
 }
 
 .domain-image-wrapper:hover {
     transform: scale(1.01);
-    box-shadow: 0 30px 60px -18px rgba(37, 99, 235, 0.18);
+    box-shadow: 0 30px 60px -18px rgba(0, 212, 255, 0.08);
 }
 
 .domain-image-wrapper img {
     width: 100%;
     height: auto;
     display: block;
-   object-fit: contain; 
+    object-fit: contain;
     aspect-ratio: 4 / 3;
 }
 
-/* ===== RIGHT SIDE - LIST ===== */
 .domain-list {
     padding-left: 0.5rem;
 }
@@ -1402,7 +1338,10 @@ body {
     font-family: 'Zodiak', 'Times New Roman', serif;
     font-size: 2rem;
     font-weight: 700;
-    color: #0B2B42;
+    background: linear-gradient(135deg, #ffffff 0%, #00d4ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-bottom: 1.5rem;
     letter-spacing: -0.01em;
 }
@@ -1421,21 +1360,21 @@ body {
     gap: 1rem;
     align-items: flex-start;
     padding: 1rem 1.25rem;
-    background: #FFFFFF;
+    background: rgba(255, 255, 255, 0.03);
     border-radius: 1.25rem;
-    border: 1px solid rgba(37, 99, 235, 0.06);
+    border: 1px solid rgba(0, 212, 255, 0.04);
     transition: all 0.35s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .domain-items li:hover {
     transform: translateX(8px);
-    box-shadow: 0 12px 30px -12px rgba(37, 99, 235, 0.12);
-    border-color: rgba(37, 99, 235, 0.15);
+    box-shadow: 0 12px 30px -12px rgba(0, 212, 255, 0.08);
+    border-color: rgba(0, 212, 255, 0.12);
 }
 
 .domain-items li i {
-    color: #2563EB;
+    color: #00d4ff;
     font-size: 1.2rem;
     margin-top: 0.15rem;
     min-width: 20px;
@@ -1450,38 +1389,30 @@ body {
 .domain-items li strong {
     font-size: 1.05rem;
     font-weight: 700;
-    color: #0B2B42;
+    color: #e8edf5;
     margin-bottom: 0.25rem;
 }
 
 .domain-items li span {
     font-size: 0.9rem;
-    color: #5B6E8C;
+    color: #8aa8c9;
     line-height: 1.5;
 }
-
-/* ============================
-   RESPONSIVE
-   ============================ */
 
 @media (max-width: 992px) {
     .domain-content {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
     .domain-title {
         font-size: 2.2rem;
     }
-    
     .domain-subtitle {
         font-size: 1.8rem;
     }
-    
     .domain-expertise-section {
         padding: 0.5rem 1.5rem 4rem 1.5rem;
     }
-    
     .domain-image-wrapper img {
         aspect-ratio: 16 / 9;
     }
@@ -1491,27 +1422,21 @@ body {
     .domain-title {
         font-size: 1.8rem;
     }
-    
     .domain-subtitle {
         font-size: 1.5rem;
     }
-    
     .domain-items li {
         padding: 0.75rem 1rem;
     }
-    
     .domain-items li strong {
         font-size: 0.95rem;
     }
-    
     .domain-items li span {
         font-size: 0.85rem;
     }
-    
     .domain-items {
         gap: 1rem;
     }
-    
     .domain-expertise-section {
         padding: 1.5rem 1.25rem 3rem 1.25rem;
     }
@@ -1521,38 +1446,30 @@ body {
     .domain-title {
         font-size: 1.5rem;
     }
-    
     .domain-title::after {
         width: 60px;
         height: 3px;
         bottom: -10px;
     }
-    
     .domain-subtitle {
         font-size: 1.3rem;
     }
-    
     .domain-items li {
         padding: 0.75rem;
         gap: 0.75rem;
     }
-    
     .domain-items li i {
         font-size: 1rem;
     }
-    
     .domain-items li strong {
         font-size: 0.9rem;
     }
-    
     .domain-items li span {
         font-size: 0.8rem;
     }
-    
     .domain-image-wrapper {
         border-radius: 1rem;
     }
-    
     .domain-image-wrapper img {
         aspect-ratio: 4 / 3;
     }
@@ -1566,8 +1483,6 @@ body {
    <!-- 
 =========================================
   NEW SECTION: HOME INTRO / HERO SECTION
-  Place this code right after the <body> tag 
-  and before the existing <section class="capability-section">
 =========================================
 -->
 
@@ -1582,7 +1497,7 @@ body {
                 <span class="badge-text">Trusted by 50+ Enterprises & Government Bodies</span>
             </div>
             
-            <!-- Main Heading - EXACT TEXT AS REQUESTED: "Government Advisory and Digital Execution for Public Sector & Regulated Enterprises" -->
+            <!-- Main Heading -->
             <h1 class="hero-main-title">
                 Government Advisory and<br>Contract Management<br>Consulting
             </h1>
@@ -1595,7 +1510,7 @@ body {
                  delivery.
             </p>
             
-            <!-- CTA Buttons - Only Explore Services remains -->
+            <!-- CTA Buttons -->
             <div class="hero-buttons">
                 <a href="#" class="btn-primary">
                     Explore Services
@@ -1622,14 +1537,12 @@ body {
             </div>
         </div>
         
-        <!-- ========================================= -->
-        <!-- RIGHT SIDE VISUAL: INDIA MAP + CAPABILITY MATRIX (one strong visual) -->
-        <!-- ========================================= -->
+        <!-- RIGHT SIDE VISUAL: INDIA MAP + CAPABILITY MATRIX -->
         <div class="hero-right">
             <div class="hero-visual-card">
                 <div class="map-illustration">
-                    <i class="fas fa-map-india"></i> <!-- elegant India map icon from Font Awesome -->
-                    <div style="font-weight:800; margin: 0.5rem 0 0.25rem;">States Served Across India</div>
+                    <i class="fas fa-map-india"></i>
+                    <div style="font-weight:800; margin: 0.5rem 0 0.25rem; color:#e8edf5;">States Served Across India</div>
                     <div class="state-list">UP, Maharashtra, Delhi, Karnataka, TN, Gujarat, WB, Rajasthan, Telangana, Punjab +7 more</div>
                     <hr>
                     <div class="capability-pills">
@@ -1639,16 +1552,15 @@ body {
                         <span class="pill"><i class="fas fa-building"></i> Enterprise Platforms</span>
                         <span class="pill"><i class="fas fa-shield-haltered"></i> Compliance</span>
                     </div>
-                    <!-- additional subtle trust line -->
                     <div style="font-size:0.65rem; margin-top: 1rem; color:#5f7f9e;">
-                        <i class="fas fa-check-circle"></i> TRUSTED ACROSS 15+ STATES
+                        <i class="fas fa-check-circle" style="color:#00d4ff;"></i> TRUSTED ACROSS 15+ STATES
                     </div>
                 </div>
             </div>
         </div>
-        <!-- ========= END RIGHT VISUAL ========== -->
     </div>
 </section>
+
 <!-- =========================================
   WHO WE ARE SECTION - Our Purpose Right Side
   ========================================= -->
@@ -1813,7 +1725,10 @@ body {
                         <i class="fas fa-chevron-right"></i>
                         <div>
                             <strong>Telecom & IT Infrastructure</strong>
-                            <span>Network rollout, digital connectivity programs, and IT modernization</span>
+                            <span>Network rollout, digital connectivity programs,
+                                 and IT modernization. We provide end-to-end telecom infrastructure
+                                  consulting, network planning, deployment, and system integration 
+                                to ensure reliable, secure, and high-performance connectivity</span>
                         </div>
                     </li>
                     <li>
@@ -1846,7 +1761,7 @@ body {
 <%- include("common/footer.ejs") %>
 
 <script>
-     // Carousel initialization (yeh same rakho)
+     // Carousel initialization
     const myCarousel = document.querySelector('#carouselExampleIndicators');
     if (myCarousel) {
         new bootstrap.Carousel(myCarousel, {
@@ -1856,7 +1771,7 @@ body {
         });
     }
 
-    // Progress bar animation - FIXED
+    // Progress bar animation
     function animateProgressBars() {
         const progressFills = document.querySelectorAll('.progress-fill');
         progressFills.forEach(bar => {
@@ -1874,10 +1789,8 @@ body {
         });
     }
     
-    // Load pe progress bars animate karo
     window.addEventListener('load', function() {
         animateProgressBars();
-        
     });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

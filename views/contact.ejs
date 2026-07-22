@@ -10,6 +10,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="/css/common/header.css">
+  <link rel="stylesheet" href="/css/common/footer.css">
+  
   <style>
     * {
       margin: 0;
@@ -19,49 +23,55 @@
 
     body {
       font-family: 'Inter', -apple-system, sans-serif;
-      background: linear-gradient(145deg, #f0f6ff 0%, #e6edf7 100%);
+      background: #080d1a;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1.5rem;
+      padding: 0;
     }
 
     .contact-wrapper {
       width: 100%;
-      max-width: 1280px;
-      margin: 0 auto;
+      max-width: 100%;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
     }
 
     .contact-container {
       display: grid;
       grid-template-columns: 1.3fr 0.9fr;
-      gap: 2rem;
+      gap: 0;
       align-items: stretch;
       width: 100%;
+      height: 100vh;
     }
 
-    /* ===== CARD HEIGHT INCREASED ===== */
+    /* ===== DARK THEME CARDS ===== */
     .card-glass {
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(2px);
-      border-radius: 2.2rem;
-      box-shadow: 0 20px 50px -12px rgba(0, 20, 60, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.5);
-      padding: 3rem 3.2rem;         /* increased padding (top/bottom, left/right) */
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(10px);
+      border-radius: 0;
+      box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(0, 212, 255, 0.06);
+      padding: 3rem 3.2rem;
       transition: transform 0.25s ease, box-shadow 0.3s ease;
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      min-height: 620px;            /* force both cards to have extra height */
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;      /* center content vertically within the card */
+      justify-content: center;
     }
 
     .card-glass:hover {
-      box-shadow: 0 30px 65px -16px rgba(26, 67, 143, 0.25);
+      box-shadow: 0 30px 65px -16px rgba(0, 212, 255, 0.08);
       transform: translateY(-3px);
+      border-color: rgba(0, 212, 255, 0.12);
     }
 
-    /* left card: form layout */
     .contact-form-card {
       display: flex;
       flex-direction: column;
@@ -71,9 +81,10 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.03);
     }
 
+    /* ===== HEADER ===== */
     .form-card-header {
       display: flex;
       justify-content: space-between;
@@ -87,15 +98,18 @@
       font-family: 'Bebas Neue', sans-serif;
       font-size: 2.1rem;
       letter-spacing: 1.5px;
-      color: #0a2540;
+      color: #e8edf5;
       line-height: 1;
     }
     .brand span {
-      color: #1a5cff;
+      background: linear-gradient(135deg, #00d4ff, #7b2ffc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .inquiry-badge {
-      background: linear-gradient(135deg, #1a5cff, #0d47d1);
+      background: linear-gradient(135deg, #00d4ff, #7b2ffc);
       color: #fff;
       font-size: 0.7rem;
       font-weight: 700;
@@ -106,13 +120,14 @@
       gap: 8px;
       letter-spacing: 0.6px;
       text-transform: uppercase;
-      box-shadow: 0 6px 14px rgba(26, 92, 255, 0.25);
+      box-shadow: 0 6px 14px rgba(0, 212, 255, 0.25);
       white-space: nowrap;
     }
     .inquiry-badge i {
       font-size: 0.7rem;
     }
 
+    /* ===== FORM ===== */
     .contact-form {
       display: flex;
       flex-direction: column;
@@ -132,42 +147,54 @@
       gap: 0.25rem;
     }
 
-    /* ===== LABEL STYLES - ALL BOLD ===== */
     .form-group label {
       font-size: 0.65rem;
-      font-weight: 700;           /* BOLD */
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.8px;
-      color: #1a3a5a;
+      color: #8aa8c9;
+    }
+
+    .form-group label i {
+      color: #00d4ff;
     }
 
     .form-group input,
     .form-group select,
     .form-group textarea {
       padding: 0.7rem 1rem;
-      border: 1.5px solid #dfe7f0;
+      border: 1.5px solid rgba(0, 212, 255, 0.08);
       border-radius: 1rem;
       font-size: 0.9rem;
       font-family: 'Inter', sans-serif;
-      background: #f9fcff;
+      background: rgba(255, 255, 255, 0.04);
       transition: 0.2s ease;
-      color: #0b2b42;
+      color: #e8edf5;
       width: 100%;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #5a7a9a;
+      font-size: 0.8rem;
+    }
+
+    .form-group select {
+      color: #8aa8c9;
+    }
+
+    .form-group select option {
+      background: #0f1a30;
+      color: #e8edf5;
     }
 
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
-      border-color: #1a5cff;
+      border-color: #00d4ff;
       outline: none;
-      box-shadow: 0 0 0 4px rgba(26, 92, 255, 0.08);
-      background: #ffffff;
-    }
-
-    .form-group input::placeholder,
-    .form-group textarea::placeholder {
-      color: #9ab0c9;
-      font-size: 0.8rem;
+      box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.06);
+      background: rgba(255, 255, 255, 0.06);
     }
 
     .form-group textarea {
@@ -189,7 +216,7 @@
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      background: linear-gradient(135deg, #1a5cff, #0d47d1);
+      background: linear-gradient(135deg, #00d4ff, #7b2ffc);
       color: #fff;
       padding: 0.75rem 2.4rem;
       border: none;
@@ -198,13 +225,12 @@
       font-size: 0.9rem;
       cursor: pointer;
       transition: 0.25s ease;
-      box-shadow: 0 8px 22px -8px rgba(26, 92, 255, 0.4);
+      box-shadow: 0 8px 22px -8px rgba(0, 212, 255, 0.3);
     }
 
     .btn-submit:hover {
       transform: scale(1.02) translateY(-2px);
-      box-shadow: 0 14px 30px -10px rgba(26, 92, 255, 0.5);
-      background: linear-gradient(135deg, #3b7aff, #1a5cff);
+      box-shadow: 0 14px 30px -10px rgba(0, 212, 255, 0.4);
     }
 
     .quick-response {
@@ -217,24 +243,28 @@
       gap: 6px;
       font-size: 0.7rem;
       font-weight: 600;
-      color: #1a5cff;
+      color: #00d4ff;
     }
     .quick-response span i {
       font-size: 0.75rem;
     }
 
+    /* ===== RIGHT SIDE - INFO CARD ===== */
     .info-card-heading {
       font-family: 'Inter', sans-serif;
       font-weight: 700;
       font-size: 1.8rem;
-      color: #0a2540;
+      background: linear-gradient(135deg, #ffffff 0%, #00d4ff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
       letter-spacing: -0.02em;
       margin-bottom: 0.2rem;
     }
 
     .info-card-sub {
       font-size: 0.9rem;
-      color: #3a5a7a;
+      color: #8aa8c9;
       margin-bottom: 1.8rem;
       line-height: 1.5;
     }
@@ -250,16 +280,17 @@
       min-width: 38px;
       width: 38px;
       height: 38px;
-      background: linear-gradient(135deg, #e9f0fe, #d7e4fd);
+      background: rgba(0, 212, 255, 0.06);
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      border: 1px solid rgba(0, 212, 255, 0.06);
     }
     .icon-box i {
       font-size: 1rem;
-      color: #1a5cff;
+      color: #00d4ff;
     }
 
     .info-text .label {
@@ -267,12 +298,12 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.8px;
-      color: #1a5cff;
+      color: #00d4ff;
     }
     .info-text .value {
       font-weight: 500;
       font-size: 0.85rem;
-      color: #0b2b42;
+      color: #c8ddf5;
       line-height: 1.4;
     }
 
@@ -288,15 +319,16 @@
       gap: 8px;
       font-size: 0.8rem;
       font-weight: 500;
-      color: #0b2b42;
+      color: #c8ddf5;
     }
     .phone-list .phone i {
-      color: #1a5cff;
+      color: #00d4ff;
       width: 16px;
       font-size: 0.7rem;
     }
+
     .badge-247 {
-      background: linear-gradient(135deg, #1a5cff, #0d47d1);
+      background: linear-gradient(135deg, #00d4ff, #7b2ffc);
       color: #fff;
       font-size: 0.5rem;
       font-weight: 700;
@@ -313,56 +345,80 @@
       margin-top: 0.2rem;
     }
     .sector-tags span {
-      background: #eef4ff;
-      color: #0a3a6a;
+      background: rgba(0, 212, 255, 0.06);
+      color: #8aa8c9;
       font-size: 0.65rem;
       font-weight: 600;
       padding: 0.2rem 1rem;
       border-radius: 30px;
-      border: 1px solid rgba(26, 92, 255, 0.08);
+      border: 1px solid rgba(0, 212, 255, 0.06);
+      transition: 0.2s;
+    }
+    .sector-tags span:hover {
+      background: linear-gradient(135deg, #00d4ff, #7b2ffc);
+      color: #fff;
+      border-color: transparent;
     }
 
     .divider-light {
       border: 0;
-      border-top: 1.5px solid #e3ebf5;
+      border-top: 1.5px solid rgba(0, 212, 255, 0.06);
       margin: 0.7rem 0 0.9rem 0;
-      opacity: 0.7;
+      opacity: 0.5;
     }
 
-    /* ===== RESPONSIVE: keep height consistent ===== */
+    /* bottom trust badges */
+    .trust-badges {
+      margin-top: 0.6rem;
+      font-size: 0.7rem;
+      color: #5a7a9a;
+      border-top: 1px dashed rgba(0, 212, 255, 0.06);
+      padding-top: 0.6rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .trust-badges span i {
+      color: #00d4ff;
+      margin-right: 4px;
+    }
+
+    /* ===== RESPONSIVE ===== */
     @media (max-width: 1024px) {
       .contact-container {
-        gap: 1.5rem;
+        gap: 0;
       }
       .card-glass {
         padding: 2.5rem 2.2rem;
-        min-height: 560px;
+        min-height: 100vh;
       }
     }
 
     @media (max-width: 900px) {
       .contact-container {
         grid-template-columns: 1fr;
-        max-width: 600px;
-        margin: 0 auto;
+        max-width: 100%;
+        margin: 0;
+        height: 100vh;
       }
       .card-glass {
-        min-height: auto;
+        min-height: 50vh;
         padding: 2.2rem 2rem;
+        border-radius: 0;
       }
       .contact-info-card {
         padding: 2rem;
       }
       body {
-        padding: 1rem;
+        padding: 0;
       }
     }
 
     @media (max-width: 600px) {
       .card-glass {
         padding: 1.8rem 1.2rem;
-        border-radius: 1.6rem;
-        min-height: auto;
+        border-radius: 0;
+        min-height: 50vh;
       }
       .form-row {
         grid-template-columns: 1fr;
@@ -415,136 +471,139 @@
   </style>
 </head>
 <body>
+  <%- include("common/header.ejs") %>
 
-<div class="contact-wrapper">
-  <div class="contact-container">
+  <div class="contact-wrapper">
+    <div class="contact-container">
 
-    <!-- ===== LEFT CARD · FORM ===== -->
-    <div class="contact-form-card card-glass">
-      <div class="form-card-header">
-        <div class="brand"><span>Vedanova</span></div>
-        <div class="inquiry-badge">
-          <i class="fas fa-paper-plane"></i> Send Inquiry
-        </div>
-      </div>
-
-      <form class="contact-form">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="fullName"><i class="fas fa-user me-1" style="color:#1a5cff;"></i> Full Name</label>
-            <input type="text" id="fullName" placeholder="e.g. Ananya Sharma" />
-          </div>
-          <div class="form-group">
-            <label for="email"><i class="fas fa-envelope me-1" style="color:#1a5cff;"></i> Email</label>
-            <input type="email" id="email" placeholder="you@company.com" />
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="mobile"><i class="fas fa-phone me-1" style="color:#1a5cff;"></i> Mobile</label>
-            <input type="tel" id="mobile" placeholder="+91 98765 43210" />
-          </div>
-          <div class="form-group">
-            <label for="organisation"><i class="fas fa-building me-1" style="color:#1a5cff;"></i> Organisation</label>
-            <input type="text" id="organisation" placeholder="Dept. / Company" />
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="service"><i class="fas fa-cog me-1" style="color:#1a5cff;"></i> Service Interest</label>
-          <select id="service">
-            <option value="">Select a service...</option>
-            <option value="government-advisory">Government Advisory & Project Management</option>
-            <option value="contract-drafting">Contract Drafting & Management</option>
-            <option value="cyber-security">Cyber Security Consulting</option>
-            <option value="hr-consulting">HR Consulting & Workforce Solutions</option>
-            <option value="digital-transformation">Digital Transformation & IT Modernization</option>
-            <option value="erp-implementation">ERP & Software Implementation</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="message"><i class="fas fa-comment me-1" style="color:#1a5cff;"></i> Message</label>
-          <textarea id="message" placeholder="Briefly describe your project, goals, or requirement."></textarea>
-        </div>
-
-        <div class="form-actions">
-          <button type="submit" class="btn-submit">
+      <!-- ===== LEFT CARD · FORM ===== -->
+      <div class="contact-form-card card-glass">
+        <div class="form-card-header">
+          <div class="brand"><span>Vedanova</span></div>
+          <div class="inquiry-badge">
             <i class="fas fa-paper-plane"></i> Send Inquiry
-          </button>
-          <div class="quick-response">
-            <span><i class="fas fa-bolt"></i> Quick</span>
-            <span><i class="fas fa-headset"></i> 24/7</span>
           </div>
         </div>
-      </form>
+
+        <form class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fullName"><i class="fas fa-user me-1"></i> Full Name</label>
+              <input type="text" id="fullName" placeholder="e.g. Ananya Sharma" />
+            </div>
+            <div class="form-group">
+              <label for="email"><i class="fas fa-envelope me-1"></i> Email</label>
+              <input type="email" id="email" placeholder="you@company.com" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="mobile"><i class="fas fa-phone me-1"></i> Mobile</label>
+              <input type="tel" id="mobile" placeholder="+91 98765 43210" />
+            </div>
+            <div class="form-group">
+              <label for="organisation"><i class="fas fa-building me-1"></i> Organisation</label>
+              <input type="text" id="organisation" placeholder="Dept. / Company" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="service"><i class="fas fa-cog me-1"></i> Service Interest</label>
+            <select id="service">
+              <option value="">Select a service...</option>
+              <option value="government-advisory">Government Advisory & Project Management</option>
+              <option value="contract-drafting">Contract Drafting & Management</option>
+              <option value="cyber-security">Cyber Security Consulting</option>
+              <option value="hr-consulting">HR Consulting & Workforce Solutions</option>
+              <option value="digital-transformation">Digital Transformation & IT Modernization</option>
+              <option value="erp-implementation">ERP & Software Implementation</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message"><i class="fas fa-comment me-1"></i> Message</label>
+            <textarea id="message" placeholder="Briefly describe your project, goals, or requirement."></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-submit">
+              <i class="fas fa-paper-plane"></i> Send Inquiry
+            </button>
+            <div class="quick-response">
+              <span><i class="fas fa-bolt"></i> Quick</span>
+              <span><i class="fas fa-headset"></i> 24/7</span>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- ===== RIGHT CARD · INFO ===== -->
+      <div class="contact-info-card card-glass">
+        <h2 class="info-card-heading">Get in touch</h2>
+        <p class="info-card-sub">Let's discuss your next project — government, enterprise or innovation.</p>
+
+        <div class="info-item">
+          <div class="icon-box"><i class="fas fa-map-pin"></i></div>
+          <div class="info-text">
+            <div class="label">Address</div>
+            <div class="value">238, Royal Krishna Bungalow, Indore, MP - 452010</div>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="icon-box"><i class="fas fa-envelope"></i></div>
+          <div class="info-text">
+            <div class="label">Email</div>
+            <div class="value">contact@Vedanova.in</div>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="icon-box"><i class="fas fa-building"></i></div>
+          <div class="info-text">
+            <div class="label">Company</div>
+            <div class="value">Vedanova</div>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
+          <div class="info-text">
+            <div class="label">Contact Numbers</div>
+            <div class="phone-list">
+              <div class="phone"><i class="fas fa-phone"></i> +91 96256 51944</div>
+              <div class="phone"><i class="fas fa-headset"></i> 24/7 Enterprise Support <span class="badge-247">24/7</span></div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="divider-light" />
+
+        <div class="info-item">
+          <div class="icon-box"><i class="fas fa-briefcase"></i></div>
+          <div class="info-text">
+            <div class="label">Sectors Served</div>
+            <div class="sector-tags">
+              <span>Central & State Govt</span>
+              <span>PSUs</span>
+              <span>BFSI</span>
+              <span>Enterprise</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="trust-badges">
+          <span><i class="fas fa-check-circle"></i> 10+ years of trust</span>
+          <span><i class="fas fa-check-circle"></i> Pan-India delivery</span>
+          <span><i class="fas fa-check-circle"></i> Govt. empanelled</span>
+        </div>
+      </div>
+
     </div>
-
-    <!-- ===== RIGHT CARD · INFO ===== -->
-    <div class="contact-info-card card-glass">
-      <h2 class="info-card-heading">Get in touch</h2>
-      <p class="info-card-sub">Let's discuss your next project — government, enterprise or innovation.</p>
-
-      <div class="info-item">
-        <div class="icon-box"><i class="fas fa-map-pin"></i></div>
-        <div class="info-text">
-          <div class="label">Address</div>
-          <div class="value">238, Royal Krishna Bungalow, Indore, MP - 452010</div>
-        </div>
-      </div>
-
-      <div class="info-item">
-        <div class="icon-box"><i class="fas fa-envelope"></i></div>
-        <div class="info-text">
-          <div class="label">Email</div>
-          <div class="value">contact@Vedanova.in</div>
-        </div>
-      </div>
-
-      <div class="info-item">
-        <div class="icon-box"><i class="fas fa-building"></i></div>
-        <div class="info-text">
-          <div class="label">Company</div>
-          <div class="value">Vedanova</div>
-        </div>
-      </div>
-
-      <div class="info-item">
-        <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
-        <div class="info-text">
-          <div class="label">Contact Numbers</div>
-          <div class="phone-list">
-            <div class="phone"><i class="fas fa-phone"></i> +91 96256 51944</div>
-            <div class="phone"><i class="fas fa-headset"></i> 24/7 Enterprise Support <span class="badge-247">24/7</span></div>
-          </div>
-        </div>
-      </div>
-
-      <hr class="divider-light" />
-
-      <div class="info-item">
-        <div class="icon-box"><i class="fas fa-briefcase"></i></div>
-        <div class="info-text">
-          <div class="label">Sectors Served</div>
-          <div class="sector-tags">
-            <span>Central & State Govt</span>
-            <span>PSUs</span>
-            <span>BFSI</span>
-            <span>Enterprise</span>
-          </div>
-        </div>
-      </div>
-
-      <div style="margin-top: 0.6rem; font-size: 0.7rem; color: #4a6a8a; border-top: 1px dashed #dce5f0; padding-top: 0.6rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-        <span><i class="fas fa-check-circle" style="color:#1a5cff;"></i> 10+ years of trust</span>
-        <span><i class="fas fa-check-circle" style="color:#1a5cff;"></i> Pan-India delivery</span>
-        <span><i class="fas fa-check-circle" style="color:#1a5cff;"></i> Govt. empanelled</span>
-      </div>
-    </div>
-
   </div>
-</div>
+
+  <%- include("common/footer.ejs") %>
 
 </body>
 </html>
