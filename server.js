@@ -24,7 +24,7 @@ mongoose.connect(process.env.MONGO_URL)
     console.log("Database error:", err);
 });
 
-app.get("/index",(req,res)=>{
+app.get("/",(req,res)=>{
     res.render("index")
 })
 
